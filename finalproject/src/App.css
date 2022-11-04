@@ -1,15 +1,31 @@
-body {
-  margin: 0;
+.body {
+  margin: -10px;
   color: #6a6f8c;
-  background-image: url("https://wallpaperset.com/w/full/2/7/8/366144.jpg");
+  background-image: url("https://wallpaperaccess.com/full/3658607.jpg");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  height: 101vh;
+  background-repeat: repeat;
   font: 600 16px/18px "Open Sans", sans-serif;
+}
+.title-logo {
+  display: flex;
+  justify-content: space-around;
+}
+.logo {
+  background-image: url(./images/logo.png);
+  background-position: center;
+  background-size: 160px;
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 80px;
 }
 .title {
   font-size: xx-large;
+  padding-top: 40px;
+  padding-right: 50px;
   margin-bottom: 30px;
-  color: #1161ee;
+  color: #ffff;
 }
 *,
 :after,
