@@ -1,13 +1,70 @@
-.top-bar {
+.site {
   display: flex;
   justify-content: center;
+}
+.top-bar {
+  display: flex;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   height: 64px;
   width: 100%;
-  z-index: 10;
   transition: top 0.2s linear;
   background-color: rgb(3, 37, 65);
+  color: white;
+}
+.selam {
+  display: flex;
+  justify-content: space-around;
+}
+.titles {
+  font-size: large;
+  font-weight: 200;
+  width: 80px;
+}
+.logo2 {
+  background-image: url(./images/logo.png);
+  background-position: center;
+  margin-bottom: 20px;
+  background-size: 160px;
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 80px;
+}
+.search {
+  margin-top: 56px;
+}
+.search-bar {
+  border: 3px rgb(3, 37, 65, 0.8);
+  background-image: url("https://collider.com/wp-content/uploads/the-avengers-movie-poster-banners-04.jpg");
+  background-size: contain;
+  background-repeat: repeat;
+  border-radius: 8px;
+  width: 90vw;
+  height: 22vw;
+}
+.search-bar-color {
+  background: rgb(3, 37, 65, 0.8);
+  width: 100%;
+  height: 100%;
+}
+.Yazılar {
+  flex-direction: column;
+  color: #fff;
+  font-size: xx-large;
+  margin-left: 75px;
+  padding-top: 50px;
+}
+.search-input {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  width: 90%;
+  height: 46px;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 20px;
+  font-size: large;
+  outline: none;
 }

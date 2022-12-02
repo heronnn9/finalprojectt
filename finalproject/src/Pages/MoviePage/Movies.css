@@ -1,0 +1,31 @@
+.categories {
+  width: 25vw;
+  height: 40vw;
+  margin-top: 30px;
+}
+.movies {
+  width: 75vw;
+  height: 40vw;
+  margin-top: 30px;
+}
+.category-title {
+  display: flex;
+  justify-content: center;
+}
+.movie-categories {
+  display: flex;
+  flex-direction: row;
+}
+.MovieContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px;
+}
+.Name {
+  margin-top: 80px;
+  width: 100%;
+  height: auto;
+  padding-left: 50px;
+  font-size: xx-large;
+}

@@ -1,0 +1,13 @@
+.category-css {
+  height: 40px;
+  margin-top: 3px;
+  background-color: brown;
+  display: flex;
+  align-items: center;
+}
+.arrow {
+  margin-left: 40px;
+}
+.category-name {
+  margin-left: 40px;
+}
