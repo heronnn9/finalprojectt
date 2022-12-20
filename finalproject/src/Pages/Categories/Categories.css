@@ -1,13 +1,19 @@
 .category-css {
   height: 40px;
-  margin-top: 3px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 5px;
   background-color: brown;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .arrow {
   margin-left: 40px;
+  color: rgb(36, 112, 179);
 }
 .category-name {
   margin-left: 40px;
+  background-color: rgb(36, 112, 179);
+  width: 100px;
 }

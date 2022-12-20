@@ -1,8 +1,19 @@
 import React from "react";
+import { Fragment } from "react";
 import SeriesContainer from "./SeriesContainer";
 import { Link } from "react-router-dom";
 import Categories from "../Categories/Categories";
-function Series() {
+import axios from "axios";
+import { useState } from "react";
+
+const Series = () => {
+  const [category, setCategory] = useState([]);
+
+  React.useEffect(() => {
+    axios.get("https://localhost:7298/api/Movie/genre").then((respon) => {
+      setCategory(respon.data);
+    });
+  }, []);
   return (
     <div>
       <div className="top-bar">
@@ -25,9 +36,11 @@ function Series() {
       <div className="movie-categories">
         <div className="categories">
           <h2 className="category-title">Kategoriler</h2>
-          <Categories></Categories>
-          <Categories></Categories>
-          <Categories></Categories>
+          {category.map((categoryData) => (
+            <Fragment key={categoryData.id}>
+              <Categories category={categoryData} key={categoryData.id} />
+            </Fragment>
+          ))}
         </div>
         <div className="movies">
           <div className="movie-banner">
@@ -46,5 +59,5 @@ function Series() {
       </div>
     </div>
   );
-}
+};
 export default Series;

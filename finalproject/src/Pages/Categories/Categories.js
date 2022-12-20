@@ -1,17 +1,29 @@
-import React from "react";
+import { useSearchParams } from "react-router-dom";
 import "./Categories.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons";
-function Categories() {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const Categories = (props) => {
+  const [query, setQuery] = useSearchParams();
+
   return (
     <div>
       <div className="category-css">
         <div className="arrow">
           <FontAwesomeIcon icon={faArrowAltCircleRight} />
         </div>
-        <h3 className="category-name">Selam</h3>
+        <button
+          className="category-name"
+          onClick={() => {
+            setQuery({
+              genreId: props.category.id,
+            });
+          }}
+        >
+          {props.category.name}
+        </button>
       </div>
     </div>
   );
-}
+};
 export default Categories;
