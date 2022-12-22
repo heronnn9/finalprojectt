@@ -1,9 +1,9 @@
 import React from "react";
 import { Fragment } from "react";
 import SeriesContainer from "./SeriesContainer";
-import { Link } from "react-router-dom";
 import Categories from "../Categories/Categories";
 import axios from "axios";
+import Topbar from "../../Components/Top-Bar/Topbar";
 import { useState } from "react";
 
 const Series = () => {
@@ -16,22 +16,7 @@ const Series = () => {
   }, []);
   return (
     <div>
-      <div className="top-bar">
-        <div className="logo2"> </div>
-        <Link to="/mainpage " className="title">
-          Moviestagram
-        </Link>
-        <div className="selam">
-          <Link to="/movies" className="titles">
-            Filmler
-          </Link>
-          <Link to="/series" className="titles">
-            Diziler
-          </Link>
-          <div className="titles">Keşfet</div>
-          <div className="titles">Top 100</div>
-        </div>
-      </div>
+      <Topbar />
       <div className="Name">Popüler Diziler</div>
       <div className="movie-categories">
         <div className="categories">

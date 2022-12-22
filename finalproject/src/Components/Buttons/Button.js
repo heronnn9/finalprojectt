@@ -1,8 +1,5 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
-
 const Button = () => {
-  const [query, setQuery] = useSearchParams();
   return (
     <button
       onClick={() => {

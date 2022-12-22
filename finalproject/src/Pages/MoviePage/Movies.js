@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import "./Movies.css";
 import "./MovieContainer/MovieContainer";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import MovieContainer from "./MovieContainer/MovieContainer";
 import Categories from "../Categories/Categories";
 import axios from "axios";
+import Topbar from "../../Components/Top-Bar/Topbar";
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -39,22 +40,7 @@ const Movies = () => {
   }, []);
   return (
     <div>
-      <div className="top-bar">
-        <div className="logo2"> </div>
-        <Link to="/mainpage" className="title">
-          Moviestagram
-        </Link>
-        <div className="selam">
-          <Link to="/movies" className="titles">
-            Filmler
-          </Link>
-          <Link to="/series" className="titles">
-            Diziler
-          </Link>
-          <div className="titles">Keşfet</div>
-          <div className="titles">Top 100</div>
-        </div>
-      </div>
+      <Topbar />
       <div className="Name">Popüler Filmler</div>
       <div className="movie-categories">
         <div className="categories">

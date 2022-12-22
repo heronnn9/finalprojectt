@@ -2,29 +2,8 @@
   display: flex;
   justify-content: center;
 }
-.top-bar {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 64px;
-  width: 100%;
-  transition: top 0.2s linear;
-  background-color: rgb(3, 37, 65);
-  color: white;
-}
-.selam {
-  display: flex;
-  justify-content: space-around;
-}
-.titles {
-  font-size: large;
-  font-weight: 200;
-  width: 80px;
-}
 .logo2 {
-  background-image: url(./images/logo.png);
+  background-image: url(./logo.png);
   background-position: center;
   margin-bottom: 20px;
   background-size: 160px;

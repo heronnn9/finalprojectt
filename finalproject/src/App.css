@@ -13,7 +13,7 @@
   justify-content: space-around;
 }
 .logo {
-  background-image: url(./images/logo.png);
+  background-image: url(./Pages/MainPage/logo.png);
   background-position: center;
   background-size: 160px;
   background-repeat: no-repeat;
@@ -24,8 +24,12 @@
   font-size: xx-large;
   padding-top: 40px;
   padding-right: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: #ffff;
+}
+.title:hover {
+  color: rgb(136, 136, 216);
+  transition: 0.9s;
 }
 *,
 :after,

@@ -1,0 +1,48 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 100%;
+  transition: top 0.2s linear;
+  background-color: rgb(3, 37, 65);
+  color: white;
+}
+.selam {
+  display: flex;
+}
+.titles {
+  font-size: large;
+  width: 80px;
+}
+.titles:hover {
+  color: rgb(136, 136, 216);
+  transition: 0.9s;
+}
+.profile-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+  width: 70px;
+  margin-right: 20px;
+}
+.profile-title:hover {
+  color: rgb(136, 136, 216);
+  transition: 0.9s;
+}
+.pages {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-right: 3em;
+}
+.logout {
+  font-size: large;
+  margin-left: 10px;
+}
+.logout:hover {
+  color: brown;
+  transition: 0.9s;
+}

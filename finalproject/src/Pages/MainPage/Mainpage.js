@@ -1,23 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Mainpage.css";
+import Topbar from "../../Components/Top-Bar/Topbar";
 function Mainpage() {
   return (
     <div className="site">
-      <div className="top-bar">
-        <div className="logo2"> </div>
-        <div className="title">Moviestagram</div>
-        <div className="selam">
-          <Link to="/movies" className="titles">
-            Filmler
-          </Link>
-          <Link to="/series" className="titles">
-            Diziler
-          </Link>
-          <div className="titles">Keşfet</div>
-          <div className="titles">Top 100</div>
-        </div>
-      </div>
+      <Topbar />
       <div className="search">
         <div className="search-bar">
           <div className="search-bar-color">

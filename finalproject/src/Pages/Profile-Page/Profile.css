@@ -1,0 +1,25 @@
+.profile {
+  display: flex;
+}
+.user {
+  width: 70vw;
+  height: 100vw;
+  border: 3px solid black;
+  margin-top: 60px;
+}
+.user-info {
+  width: 30vw;
+  height: 100vw;
+  border: 3px solid black;
+  margin-top: 60px;
+}
+.user-icon {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  font-size: 80px;
+}
+.personal-info {
+  display: flex;
+  justify-content: center;
+}
