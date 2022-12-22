@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import App from "./App";
-import Mainpage from "./Pages/MainPage/Mainpage";
-import Movies from "./Pages/MoviePage/Movies";
-import Series from "./Pages/SeriesPage/Series";
-import Profile from "./Pages/Profile-Page/Profile";
+import App from "../Pages/LoginPage/App";
+import Mainpage from "../Pages/MainPage/Mainpage";
+import Movies from "../Pages/MoviePage/Movies";
+import Series from "../Pages/SeriesPage/Series";
+import Profile from "../Pages/Profile-Page/Profile";
 function Routers() {
   return (
     <BrowserRouter>

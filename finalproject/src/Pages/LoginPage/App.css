@@ -13,7 +13,7 @@
   justify-content: space-around;
 }
 .logo {
-  background-image: url(./Pages/MainPage/logo.png);
+  background-image: url(./logo.png);
   background-position: center;
   background-size: 160px;
   background-repeat: no-repeat;

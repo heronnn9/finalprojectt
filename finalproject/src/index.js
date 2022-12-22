@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import Routers from "./Router";
+import Routers from "./Routers/Router";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
