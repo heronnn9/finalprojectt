@@ -8,24 +8,22 @@ function Mainpage() {
       <div className="search">
         <div className="search-bar">
           <div className="search-bar-color">
-            <div className="">
-              <div className="Yazılar">
-                <div className="Welcome">Hoş Geldiniz</div>
-                <div className="Under Welcome"></div>
-                Milyonlarca film, TV şovu ve keşfedilecek kişi. Şimdi keşfedin.{" "}
-              </div>
-              <div className="search-input">
-                <input
-                  type="text"
-                  placeholder="Film Dizi Kişi Ara..."
-                  className="search-input"
-                />
-              </div>
+            <div className="Yazılar">
+              <div className="Welcome">Welcome.</div>
+              <div className="Under Welcome"></div>
+              Millions of movies, TV shows and people to discover. Explore now.{" "}
+            </div>
+            <div className="search-input">
+              <input
+                type="text"
+                placeholder="Film Dizi Kişi Ara..."
+                className="search-input"
+              />
             </div>
           </div>
-          <div className="input"></div>
         </div>
       </div>
+      <div className="colum"></div>
     </div>
   );
 }

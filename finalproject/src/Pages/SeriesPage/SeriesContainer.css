@@ -10,6 +10,7 @@
   background-repeat: no-repeat;
 }
 .Movie-Intro {
+  background-color: rgb(207, 149, 40);
   width: 180px;
   display: flex;
   padding-left: 10px;

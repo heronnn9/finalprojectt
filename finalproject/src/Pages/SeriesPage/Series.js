@@ -1,11 +1,10 @@
 import React from "react";
 import { Fragment } from "react";
 import SeriesContainer from "./SeriesContainer";
-import Categories from "../Categories/Categories";
+import Categories from "../../Components/Categories/Categories";
 import axios from "axios";
 import Topbar from "../../Components/Top-Bar/Topbar";
 import { useState } from "react";
-
 const Series = () => {
   const [category, setCategory] = useState([]);
 

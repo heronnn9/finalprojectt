@@ -4,7 +4,7 @@ import "./MovieContainer/MovieContainer";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import MovieContainer from "./MovieContainer/MovieContainer";
-import Categories from "../Categories/Categories";
+import Categories from "../../Components/Categories/Categories";
 import axios from "axios";
 import Topbar from "../../Components/Top-Bar/Topbar";
 const Movies = () => {
@@ -12,20 +12,19 @@ const Movies = () => {
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState([]);
   const [query, setQuery] = useSearchParams();
-
   const fetchMovies = async () => {
     const {
-      data: { results },
+      data: { Results },
     } = await axios
       .get(
-        `https://localhost:7298/api/Movie/${query.get("genreId") ?? "28"}/${
-          query.get("pageNumber") ?? "1"
+        `https://localhost:7298/api/Movie/${query.get("GenreIds") ?? "28"}/${
+          query.get("Page") ?? "1"
         }`
       )
       .finally((x) => {
         setLoading(false);
       });
-    setMovies(results);
+    setMovies(Results);
   };
 
   React.useEffect(() => {
@@ -41,7 +40,7 @@ const Movies = () => {
   return (
     <div>
       <Topbar />
-      <div className="Name">Popüler Filmler</div>
+      <div className="Name"></div>
       <div className="movie-categories">
         <div className="categories">
           {category.map((categoryData) => (
@@ -56,8 +55,9 @@ const Movies = () => {
               {loading ? (
                 <div>Loading...</div>
               ) : (
+                movies &&
                 movies.map((movie) => (
-                  <MovieContainer key={movie.id} movie={movie} />
+                  <MovieContainer movie={movie} key={movie.id} />
                 ))
               )}
             </div>
@@ -71,7 +71,7 @@ const Movies = () => {
                 });
               }}
             >
-              1
+              Back Page
             </button>{" "}
             <button
               onClick={() => {
@@ -81,15 +81,8 @@ const Movies = () => {
                 });
               }}
             >
-              2
+              Next Page
             </button>{" "}
-            <button
-              onClick={() => {
-                setQuery("pageNumber", "3");
-              }}
-            >
-              3
-            </button>
           </div>
         </div>
       </div>

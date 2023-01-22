@@ -1,6 +1,9 @@
+body {
+  background-color: rgb(3, 37, 65);
+}
 .site {
-  display: flex;
   justify-content: center;
+  height: 80vw;
 }
 .logo2 {
   background-image: url(./logo.png);
@@ -12,7 +15,8 @@
   width: 80px;
 }
 .search {
-  margin-top: 56px;
+  margin-top: 4.46%;
+  margin-left: 5%;
 }
 .search-bar {
   border: 3px rgb(3, 37, 65, 0.8);
@@ -46,4 +50,11 @@
   padding: 10px 20px;
   font-size: large;
   outline: none;
+}
+.column {
+  margin-top: 40px;
+  display: flex;
+  border: 1px solid black;
+  width: 100%;
+  height: 15em;
 }

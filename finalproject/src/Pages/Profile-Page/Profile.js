@@ -8,13 +8,13 @@ const Profile = () => {
     <div>
       <Topbar />
       <div className="profile">
-        <div className="user">selam</div>
         <div className="user-info">
           <div className="user-icon">
             <FontAwesomeIcon icon={faUser} />
           </div>
           <div className="personal-info">
-            <h2>Personal Information</h2>
+            <h2>Heron</h2>
+            <h3>Member Since 2022</h3>
           </div>
         </div>
       </div>

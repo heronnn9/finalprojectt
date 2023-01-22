@@ -1,11 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .body {
-  margin: -10px;
   color: #6a6f8c;
   background-image: url("https://wallpaperaccess.com/full/3658607.jpg");
   background-position: center;
   background-size: contain;
-  height: 101vh;
   background-repeat: repeat;
+  height: 100vh;
   font: 600 16px/18px "Open Sans", sans-serif;
 }
 .title-logo {

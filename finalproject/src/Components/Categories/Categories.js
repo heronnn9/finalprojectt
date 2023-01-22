@@ -16,11 +16,11 @@ const Categories = (props) => {
           className="category-name"
           onClick={() => {
             setQuery({
-              genreId: props.category.id,
+              genreId: props.category.Id,
             });
           }}
         >
-          {props.category.name}
+          {props.category.Name}
         </button>
       </div>
     </div>
