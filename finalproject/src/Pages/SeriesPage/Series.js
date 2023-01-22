@@ -1,15 +1,33 @@
 import React from "react";
 import { Fragment } from "react";
 import SeriesContainer from "./SeriesContainer";
+import { useSearchParams } from "react-router-dom";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import Categories from "../../Components/Categories/Categories";
 import axios from "axios";
 import Topbar from "../../Components/Top-Bar/Topbar";
 import { useState } from "react";
 const Series = () => {
   const [category, setCategory] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [query, setQuery] = useSearchParams();
+  const [series, setSeries] = useState([]);
+
+  const fetchSeries = async () => {
+    await axios
+      .get(
+        `https://localhost:7298/api/TVSeries/${query.get("GenreIds" ?? "16")}/1`
+      )
+      .then((respo) => {
+        setSeries(respo.data);
+      });
+  };
+  React.useEffect(() => {
+    fetchSeries();
+  });
 
   React.useEffect(() => {
-    axios.get("https://localhost:7298/api/Movie/genre").then((respon) => {
+    axios.get("https://localhost:7298/api/TVSeries/genre").then((respon) => {
       setCategory(respon.data);
     });
   }, []);
@@ -29,14 +47,14 @@ const Series = () => {
         <div className="movies">
           <div className="movie-banner">
             <div className="MovieContainer">
-              <SeriesContainer />
-              <SeriesContainer />
-              <SeriesContainer />
-              <SeriesContainer />
-              <SeriesContainer />
-              <SeriesContainer />
-              <SeriesContainer />
-              <SeriesContainer />
+              {loading ? (
+                <div>Loading...</div>
+              ) : (
+                series &&
+                series.map((serie) => (
+                  <SeriesContainer serie={serie} key={serie.id} />
+                ))
+              )}
             </div>
           </div>
         </div>

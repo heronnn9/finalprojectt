@@ -16,7 +16,7 @@ const Categories = (props) => {
           className="category-name"
           onClick={() => {
             setQuery({
-              GenreIds: props.category.Id,
+              genreId: props.category.Id,
             });
           }}
         >
