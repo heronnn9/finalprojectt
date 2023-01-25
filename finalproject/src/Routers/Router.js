@@ -12,7 +12,7 @@ function Routers() {
         <Route path="/" element={<App />} />
         <Route path="/mainpage" element={<Mainpage />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/MovieInfo/:id" element={<MovieInfo />} />
+        <Route path="/movies/MovieInfo/:Id" element={<MovieInfo />} />
         <Route path="/series" element={<Series />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>

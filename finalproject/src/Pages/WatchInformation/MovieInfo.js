@@ -1,13 +1,12 @@
 import axios from "axios";
 import React from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Topbar from "../../Components/Top-Bar/Topbar";
 import "../MoviePage/MovieContainer/MovieContainer";
 import "./MovieInfo.css";
 const MovieInfo = () => {
   const [movieId, setMovieId] = useState([]);
-  const [query, setQuery] = useSearchParams();
   const { Id } = useParams();
   const fetchId = async () => {
     await axios
@@ -16,9 +15,10 @@ const MovieInfo = () => {
         setMovieId(respo.data);
       });
   };
-  useEffect(() => {
+  React.useEffect(() => {
+    console.log(Id);
     fetchId();
-  });
+  }, []);
 
   return (
     <div>
