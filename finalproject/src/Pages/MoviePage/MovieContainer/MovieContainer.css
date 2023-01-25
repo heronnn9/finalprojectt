@@ -8,12 +8,12 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-.Movie-Intro {
+.Movie-Introduction {
+  background-color: rgb(207, 149, 40);
   width: 180px;
   display: flex;
   padding-left: 10px;
   padding-top: 10px;
-  flex-direction: column;
   height: 80px;
   margin-left: 25px;
   border: 1px solid black;
@@ -26,4 +26,17 @@
 }
 .Related-Date {
   font-size: small;
+}
+.Name-Relase {
+  display: flex;
+  flex-direction: column;
+}
+.Vote-Average {
+  display: flex;
+  font-size: 12px;
+  margin-left: 72%;
+  align-items: center;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
 }
