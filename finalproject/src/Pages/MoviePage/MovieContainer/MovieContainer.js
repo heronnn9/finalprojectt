@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./MovieContainer.css";
 const MovieContainer = ({ movie }) => {
-  console.log(movie);
   return (
     <Link to={`MovieInfo/${movie.Id}`} key={movie}>
       <img

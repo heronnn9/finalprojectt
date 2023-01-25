@@ -1,21 +1,8 @@
-.Movie-Banner {
-  width: 180px;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  height: 250px;
-  margin-left: 25px;
-  margin-top: 20px;
-  background-image: url("https://i.ebayimg.com/images/g/rCUAAOSwhg5goWD1/s-l1600.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.Movie-Introduction {
+.Series-Introduction {
   background-color: rgb(207, 149, 40);
   width: 180px;
-  display: flex;
   padding-left: 10px;
   padding-top: 10px;
-  flex-direction: column;
   height: 80px;
   margin-left: 25px;
   border: 1px solid black;
@@ -23,9 +10,19 @@
   border-bottom-right-radius: 8px;
   box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
 }
-.Movie-Adı {
-  font-size: large;
+.VoteAverage {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  padding-left: 6px;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgb(169, 122, 34);
 }
-.Related-Date {
-  font-size: small;
+.Series-Name {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: rgb(169, 122, 34);
 }

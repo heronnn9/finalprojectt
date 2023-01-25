@@ -2,7 +2,6 @@ import { useSearchParams } from "react-router-dom";
 import "./Categories.css";
 import { faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 const Categories = (props) => {
   const [query, setQuery] = useSearchParams();
 

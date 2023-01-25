@@ -6,13 +6,17 @@ import { useState } from "react";
 import MovieContainer from "./MovieContainer/MovieContainer";
 import Categories from "../../Components/Categories/Categories";
 import axios from "axios";
+import Loading from "../../Components/Loading/Loading";
 import Topbar from "../../Components/Top-Bar/Topbar";
 const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [category, setCategory] = useState([]);
   const [query, setQuery] = useSearchParams();
+  const [loading, setLoading] = useState(false);
 
   const fetchMovies = async () => {
+    setLoading(true);
+
     const {
       data: { Results },
     } = await axios.get(
@@ -20,9 +24,11 @@ const Movies = () => {
         query.get("pageNumber") ?? "1"
       }`
     );
-    setMovies(Results);
+    setTimeout(() => {
+      setLoading(false);
+      setMovies(Results);
+    }, 500);
   };
-  // const { isLoading, isError, error, data } = useQuery(["movie" , page], () =>  fetchMovies(page));
 
   React.useEffect(() => {
     fetchMovies();
@@ -48,10 +54,13 @@ const Movies = () => {
         <div className="movies">
           <div className="movie-banner">
             <div className="MovieContainer">
-              {movies &&
+              {loading ? (
+                <Loading />
+              ) : (
                 movies.map((movie) => (
                   <MovieContainer movie={movie} key={movie.id} />
-                ))}
+                ))
+              )}
             </div>
           </div>
           <div className="page-numbers">

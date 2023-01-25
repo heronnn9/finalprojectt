@@ -3,10 +3,11 @@ import Topbar from "../../Components/Top-Bar/Topbar";
 import "../MoviePage/MovieContainer/MovieContainer";
 import "./MovieInfo.css";
 const MovieInfo = ({ movie }) => {
+  console.log(movie);
   return (
     <div>
       <Topbar />
-      <div className="Backpath">Selam</div>
+      <div className="Backpath"></div>
     </div>
   );
 };

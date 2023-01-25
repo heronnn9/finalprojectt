@@ -8,9 +8,13 @@ const SeriesContainer = ({ serie }) => {
         src={`https://image.tmdb.org/t/p/w400${serie.PosterPath}`}
         alt="nice"
       ></img>
-      <div className="Movie-Intro">
-        <div className="Movie-Adı">{serie.Name}</div>
-        <div className="Related-Date">{serie.ReleaseDate}</div>
+      <div className="Series-Introduction">
+        <div className="Series-Name">
+          <div className="Series-Adı">{serie.Name}</div>
+        </div>
+        <div className="VoteAverage">
+          <div>{serie.VoteAverage}</div>
+        </div>
       </div>
     </div>
   );

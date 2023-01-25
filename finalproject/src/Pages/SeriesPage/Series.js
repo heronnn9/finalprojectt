@@ -49,7 +49,7 @@ const Series = () => {
             <div className="MovieContainer">
               {series &&
                 series.map((serie) => (
-                  <SeriesContainer serie={serie} key={serie.id} />
+                  <SeriesContainer serie={serie} key={serie.Id} />
                 ))}
             </div>
           </div>
