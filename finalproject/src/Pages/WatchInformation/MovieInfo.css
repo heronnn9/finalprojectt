@@ -1,38 +1,11 @@
 .Backpath {
   width: 20%;
-  height: 60%;
-  position: fixed;
-  top: 20%;
-  left: 5%;
+  height: 10%;
   background-color: aqua;
-}
-.BackdropPath {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  filter: brightness(30%);
-}
-.Poster {
-  display: flex;
-  flex-direction: row;
   margin-top: 64px;
 }
-.Overview {
-  width: 50%;
-  color: wheat;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin-top: 20%;
-  left: 30%;
-}
 .Watch-Info {
-  position: relative;
-  color: white;
-}
-.Info-Name {
-  position: absolute;
-  top: 20%;
-  left: 30%;
-  color: wheat;
+  width: 80%;
+  height: 10%;
+  background-color: aqua;
 }
