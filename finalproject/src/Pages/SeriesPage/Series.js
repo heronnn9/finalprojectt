@@ -1,20 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Fragment } from "react";
 import SeriesContainer from "./SeriesContainer";
 import { useSearchParams } from "react-router-dom";
 import Categories from "../../Components/Categories/Categories";
-import axios from "axios";
 import Topbar from "../../Components/Top-Bar/Topbar";
-import { useState } from "react";
+import apiService from "../../Services/API/Api";
 const Series = () => {
   const [category, setCategory] = useState([]);
   const [query] = useSearchParams();
   const [series, setSeries] = useState([]);
-
   const fetchSeries = async () => {
-    await axios
+    await apiService
       .get(
-        `https://localhost:7298/api/TVSeries/${query.get("GenreIds" ?? "16")}/${
+        `TVSeries/${query.get("GenreIds") ?? "16"}/${
           query.get("pageNumber") ?? "1"
         }  `
       )
@@ -27,7 +25,7 @@ const Series = () => {
   });
 
   React.useEffect(() => {
-    axios.get("https://localhost:7298/api/TVSeries/genre").then((respon) => {
+    apiService.get("TVSeries/genre").then((respon) => {
       setCategory(respon.data);
     });
   }, []);

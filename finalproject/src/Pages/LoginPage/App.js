@@ -39,11 +39,11 @@ function App() {
                 <input
                   id="pass"
                   type="password"
-                  class="input"
+                  className="input"
                   data-type="password"
                 />
               </div>
-              <div class="group">
+              <div className="group">
                 <input id="check" type="checkbox" className="check" checked />
                 <label for="check">
                   <span className="icon"></span> Keep me Signed in

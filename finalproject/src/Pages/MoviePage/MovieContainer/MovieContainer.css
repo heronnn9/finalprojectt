@@ -8,6 +8,13 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+.Movie-Container {
+  transition: 0.5s all;
+}
+.Movie-Container:hover {
+  transform: scale(1.2);
+}
+
 .Movie-Introduction {
   background-color: rgb(207, 149, 40);
   width: 180px;
@@ -29,14 +36,18 @@
 }
 .Name-Relase {
   display: flex;
+  width: 100%;
   flex-direction: column;
 }
 .Vote-Average {
-  display: flex;
+  padding-top: 5px;
+  padding-right: 15px;
   font-size: 12px;
-  margin-left: 72%;
-  align-items: center;
+  justify-content: end;
+  align-items: flex-end;
+  justify-self: end;
+  align-items: flex-end;
+  display: flex;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  white-space: nowrap;
 }

@@ -6,6 +6,7 @@
   left: 0;
   height: 64px;
   width: 100%;
+  z-index: 9999;
   transition: top 0.2s linear;
   /* background-color: rgb(3, 37, 65); */
   background-color: rgb(48, 30, 103);

@@ -1,55 +1,66 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./Movies.css";
 import "./MovieContainer/MovieContainer";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import MovieContainer from "./MovieContainer/MovieContainer";
-import Categories from "../../Components/Categories/Categories";
-import axios from "axios";
-import Loading from "../../Components/Loading/Loading";
+import Loading from "../../Layouts/Loading/Loading";
 import Topbar from "../../Components/Top-Bar/Topbar";
+import apiService from "../../Services/API/Api";
+
 const Movies = () => {
-  const [movies, setMovies] = useState([]);
   const [category, setCategory] = useState([]);
-  const [query, setQuery] = useSearchParams();
+  let [query, setQuery] = useSearchParams();
   const [loading, setLoading] = useState(false);
+  const [testResult, setTestResult] = useState({
+    Results: [],
+    title: "Avengers",
+  });
 
   const fetchMovies = async () => {
     setLoading(true);
-
-    const {
-      data: { Results },
-    } = await axios.get(
-      `https://localhost:7298/api/Movie/${query.get("GenreIds") ?? "28"}/${
-        query.get("pageNumber") ?? "1"
-      }`
+    console.log("====>", query.get("GenreIds"));
+    const testData = await apiService.get(
+      `Movie/${query.get("GenreIds") ?? "28"}/${query.get("pageNumber") ?? "1"}`
     );
+    setTestResult(testData.data);
     setTimeout(() => {
       setLoading(false);
-      setMovies(Results);
     }, 500);
   };
-
+  const fetchCategory = async () => {
+    const testCategory = await apiService.get("Movie/genre");
+    setCategory(testCategory.data);
+    console.log(testCategory.data);
+  };
   React.useEffect(() => {
     fetchMovies();
+    fetchCategory();
   }, [query]);
 
-  React.useEffect(() => {
-    axios.get("https://localhost:7298/api/Movie/genre").then((respon) => {
-      setCategory(respon.data);
-    });
-  }, []);
   return (
     <div>
       <Topbar />
-      <div className="Name"></div>
+      <div className="Name">Categories</div>
       <div className="movie-categories">
         <div className="categories">
-          {category.map((categoryData) => (
-            <Fragment key={categoryData.Id}>
-              <Categories category={categoryData} key={categoryData.Id} />
-            </Fragment>
-          ))}
+          <select
+            className="selects"
+            onChange={(e) => {
+              setQuery({
+                GenreIds: e.target.value,
+              });
+            }}
+          >
+            {category.length > 0 &&
+              category.map((categoryData) => {
+                return (
+                  <option key={categoryData.Id} value={categoryData.Id}>
+                    {categoryData.Name}
+                  </option>
+                );
+              })}
+          </select>
         </div>
         <div className="movies">
           <div className="movie-banner">
@@ -57,8 +68,8 @@ const Movies = () => {
               {loading ? (
                 <Loading />
               ) : (
-                movies.map((movie) => (
-                  <MovieContainer movie={movie} key={movie.id} />
+                testResult.Results.map((movie) => (
+                  <MovieContainer movie={movie} key={movie.Id} />
                 ))
               )}
             </div>
@@ -68,7 +79,7 @@ const Movies = () => {
               onClick={() => {
                 setQuery({
                   genreId: query.get("genreIds") ?? "28",
-                  pageNumber: "1",
+                  pageNumber: testResult.Page - 1,
                 });
               }}
             >
@@ -78,11 +89,11 @@ const Movies = () => {
               onClick={() => {
                 setQuery({
                   genreId: query.get("genreIds") ?? "28",
-                  pageNumber: "2",
+                  pageNumber: testResult.Page + 1,
                 });
               }}
             >
-              Next Page
+              Next Page {testResult.Page + 1}
             </button>{" "}
           </div>
         </div>

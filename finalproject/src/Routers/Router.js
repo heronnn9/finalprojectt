@@ -4,7 +4,8 @@ import Mainpage from "../Pages/MainPage/Mainpage";
 import Movies from "../Pages/MoviePage/Movies";
 import Series from "../Pages/SeriesPage/Series";
 import Profile from "../Pages/Profile-Page/Profile";
-import MovieInfo from "../Pages/WatchInformation/MovieInfo";
+import SeriesInfo from "../Components/WatchInformation/Series/SeriesInfo";
+import MovieInfo from "../Components/WatchInformation/Movies/MovieInfo";
 function Routers() {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ function Routers() {
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/MovieInfo/:Id" element={<MovieInfo />} />
         <Route path="/series" element={<Series />} />
+        <Route path="/series/SeriesInfo/:Id" element={<SeriesInfo />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
