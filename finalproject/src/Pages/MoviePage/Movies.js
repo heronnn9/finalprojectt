@@ -1,12 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./Movies.css";
 import "./MovieContainer/MovieContainer";
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import MovieContainer from "./MovieContainer/MovieContainer";
 import Loading from "../../Layouts/Loading/Loading";
-import Topbar from "../../Components/Top-Bar/Topbar";
+import Topbar from "../../Layouts/Top-Bar/Topbar";
 import apiService from "../../Services/API/Api";
+import Categories from "../../Components/Categories/Categories";
 
 const Movies = () => {
   const [category, setCategory] = useState([]);
@@ -19,7 +20,6 @@ const Movies = () => {
 
   const fetchMovies = async () => {
     setLoading(true);
-    console.log("====>", query.get("GenreIds"));
     const testData = await apiService.get(
       `Movie/${query.get("GenreIds") ?? "28"}/${query.get("pageNumber") ?? "1"}`
     );
@@ -31,7 +31,6 @@ const Movies = () => {
   const fetchCategory = async () => {
     const testCategory = await apiService.get("Movie/genre");
     setCategory(testCategory.data);
-    console.log(testCategory.data);
   };
   React.useEffect(() => {
     fetchMovies();
@@ -55,9 +54,12 @@ const Movies = () => {
             {category.length > 0 &&
               category.map((categoryData) => {
                 return (
-                  <option key={categoryData.Id} value={categoryData.Id}>
-                    {categoryData.Name}
-                  </option>
+                  // <option key={categoryData.Id} value={categoryData.Id}>
+                  //   {categoryData.Name}
+                  // </option>
+                  <Fragment key={categoryData.id}>
+                    <Categories category={categoryData} key={categoryData.id} />
+                  </Fragment>
                 );
               })}
           </select>

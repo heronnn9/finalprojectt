@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import Topbar from "../../Top-Bar/Topbar";
+import Topbar from "../../../Layouts/Top-Bar/Topbar";
 import "../../../Pages/MoviePage/MovieContainer/MovieContainer";
 import "./MovieInfo.css";
 const MovieInfo = () => {
@@ -44,7 +44,6 @@ const MovieInfo = () => {
             <div className="Overvieww">
               <h1>Overview</h1>
               {movieId.Overview}
-              <h1>IMDB {movieId.VoteAverage}</h1>
             </div>
           </div>
         </div>

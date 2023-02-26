@@ -1,6 +1,6 @@
 import React from "react";
 import "./Mainpage.css";
-import Topbar from "../../Components/Top-Bar/Topbar";
+import Topbar from "../../Layouts/Top-Bar/Topbar";
 function Mainpage() {
   return (
     <div className="site">

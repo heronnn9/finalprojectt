@@ -26,3 +26,9 @@
   border-radius: 8px;
   background-color: rgb(169, 122, 34);
 }
+.Series-Container {
+  transition: 0.5s all;
+}
+.Series-Container:hover {
+  transform: scale(1.2);
+}

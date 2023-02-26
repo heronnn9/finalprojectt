@@ -3,11 +3,11 @@ import { Fragment } from "react";
 import SeriesContainer from "./SeriesContainer";
 import { useSearchParams } from "react-router-dom";
 import Categories from "../../Components/Categories/Categories";
-import Topbar from "../../Components/Top-Bar/Topbar";
+import Topbar from "../../Layouts/Top-Bar/Topbar";
 import apiService from "../../Services/API/Api";
 const Series = () => {
   const [category, setCategory] = useState([]);
-  const [query] = useSearchParams();
+  const [query, setQuery] = useSearchParams();
   const [series, setSeries] = useState([]);
   const fetchSeries = async () => {
     await apiService
@@ -35,12 +35,26 @@ const Series = () => {
       <div className="Name">Popüler Diziler</div>
       <div className="movie-categories">
         <div className="categories">
-          <h2 className="category-title">Kategoriler</h2>
-          {category.map((categoryData) => (
-            <Fragment key={categoryData.id}>
-              <Categories category={categoryData} key={categoryData.id} />
-            </Fragment>
-          ))}
+          <select
+            className="selects"
+            onChange={(e) => {
+              setQuery({
+                GenreIds: e.target.value,
+              });
+            }}
+          >
+            {category.length > 0 &&
+              category.map((categoryData) => {
+                return (
+                  // <option key={categoryData.Id} value={categoryData.Id}>
+                  //   {categoryData.Name}
+                  // </option>
+                  <Fragment key={categoryData.id}>
+                    <Categories category={categoryData} key={categoryData.id} />
+                  </Fragment>
+                );
+              })}
+          </select>
         </div>
         <div className="movies">
           <div className="movie-banner">

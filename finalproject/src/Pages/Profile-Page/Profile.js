@@ -1,5 +1,5 @@
 import React from "react";
-import Topbar from "../../Components/Top-Bar/Topbar";
+import Topbar from "../../Layouts/Top-Bar/Topbar";
 import "./Profile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
