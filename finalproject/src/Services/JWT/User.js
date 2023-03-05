@@ -9,12 +9,17 @@ const User = () => {
 
     const getUser = async () => {
       try {
-        const response = await Api.get(`/users`, { signal: controller.signal });
+        const response = await Api.get(`/User`, { signal: controller.signal });
         console.log(response.data);
         isMounted && setUser(response.data);
       } catch (err) {
         console.log(err);
       }
+    };
+    getUser();
+    return () => {
+      isMounted = false;
+      controller.abort();
     };
   }, []);
   return (
