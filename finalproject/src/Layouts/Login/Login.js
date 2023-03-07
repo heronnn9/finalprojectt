@@ -8,8 +8,8 @@ const Login = () => {
   const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
-  const [user, setUser] = useState("");
-  const [pwd, setPwd] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -18,7 +18,7 @@ const Login = () => {
   }, []);
   useEffect(() => {
     setErrMsg(``);
-  }, [user, pwd]);
+  }, [username, password]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const Login = () => {
     try {
       const response = await apiServices.post(
         LOGIN_URL,
-        JSON.stringify({ user, pwd }),
+        JSON.stringify({ username, password }),
         {
           headers: { "Context-Type ": "application/json" },
           withCredentials: true,
@@ -35,9 +35,9 @@ const Login = () => {
       console.log(JSON.stringify(response?.data));
       const accessToken = response?.data?.accessToken;
       const roles = response?.data.roles;
-      setAuth({ user, pwd, roles, accessToken });
-      setUser(``);
-      setPwd(``);
+      setAuth({ username, password, roles, accessToken });
+      setUsername(``);
+      setPassword(``);
       setSuccess(true);
     } catch (err) {
       if (!err?.response) {
@@ -79,8 +79,8 @@ const Login = () => {
               id="username"
               ref={userRef}
               autoComplete="off"
-              onChange={(e) => setUser(e.target.value)}
-              value={user}
+              onChange={(e) => setUsername(e.target.value)}
+              value={username}
               required
             />
 
@@ -88,8 +88,8 @@ const Login = () => {
             <input
               type="password"
               id="password"
-              onChange={(e) => setPwd(e.target.value)}
-              value={pwd}
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
               required
             />
             <button>Sign In</button>
