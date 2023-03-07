@@ -33,10 +33,10 @@ section {
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -111,4 +111,9 @@ button {
 
 .line {
   display: inline-block;
+}
+.background {
+  background-image: url("./1512217.jpg");
+  width: 100vw;
+  height: 100vw;
 }

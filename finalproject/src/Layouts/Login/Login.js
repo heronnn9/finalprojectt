@@ -1,8 +1,11 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import AuthContext from "../../context/AuthProvider";
+import apiServices from "../../Services/API/Api";
 import "./Login.css";
+const LOGIN_URL = "/User/Login";
 const Login = () => {
+  const { setAuth } = useContext(AuthContext);
   const userRef = useRef();
   const errRef = useRef();
   const [user, setUser] = useState("");
@@ -19,13 +22,38 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user, pwd);
-    setUser(``);
-    setPwd(``);
-    setSuccess(true);
+
+    try {
+      const response = await apiServices.post(
+        LOGIN_URL,
+        JSON.stringify({ user, pwd }),
+        {
+          headers: { "Context-Type ": "application/json" },
+          withCredentials: true,
+        }
+      );
+      console.log(JSON.stringify(response?.data));
+      const accessToken = response?.data?.accessToken;
+      const roles = response?.data.roles;
+      setAuth({ user, pwd, roles, accessToken });
+      setUser(``);
+      setPwd(``);
+      setSuccess(true);
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("No Server Response");
+      } else if (err.response?.status === 400) {
+        setErrMsg(`Missing Usernamer or Password`);
+      } else if (err.response?.status === 401) {
+        setErrMsg("Unauthorized");
+      } else {
+        setErrMsg("Login Failed");
+      }
+      errRef.current.focus();
+    }
   };
   return (
-    <>
+    <div className="background">
       {success ? (
         <section>
           <h1>You are logged in!</h1>
@@ -70,12 +98,12 @@ const Login = () => {
             Need an Account?
             <br />
             <span className="line">
-              <Link to="/register" />
+              <Link to="/register">Sign Up</Link>
             </span>
           </p>
         </section>
       )}
-    </>
+    </div>
   );
 };
 export default Login;
