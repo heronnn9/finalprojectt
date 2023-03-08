@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../../Layouts/Login/Login";
+import Login from "../../Components/Login/Login";
 function App() {
   return (
     <div className="body">
