@@ -5,5 +5,6 @@ const apiGateway = axios.create({
 });
 
 apiService.get = (url) => apiGateway.get(url);
+apiService.post = (url, data) => apiGateway.post(url, data);
 
 export default apiService;

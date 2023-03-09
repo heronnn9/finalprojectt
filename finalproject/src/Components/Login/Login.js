@@ -75,6 +75,7 @@ const Login = () => {
           <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="email">Email:</label>
             <input
+              className="Login-Input"
               type="text"
               id="user"
               ref={userRef}
