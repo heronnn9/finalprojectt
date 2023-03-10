@@ -1,9 +1,18 @@
-import React from "react";
 import "./Topbar.css";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-function topbar() {
+import apiService from "../../Services/API/Api";
+const Topbar = () => {
+  const [, setName] = useState("");
+
+  useEffect(() => {
+    apiService.get("/User").then((respo) => {
+      setName(respo);
+      // console.log(respo);
+    });
+  }, []);
   return (
     <div className="top-bar">
       <div></div>
@@ -25,7 +34,7 @@ function topbar() {
         <div className="selam">
           <Link to="/Profile">
             <div className="profile-title">
-              Profile
+              selam
               <FontAwesomeIcon icon={faUser} />
             </div>
           </Link>
@@ -36,5 +45,5 @@ function topbar() {
       </div>
     </div>
   );
-}
-export default topbar;
+};
+export default Topbar;
