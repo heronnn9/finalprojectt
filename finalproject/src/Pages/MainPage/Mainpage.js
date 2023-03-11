@@ -1,7 +1,7 @@
 import React from "react";
 import "./Mainpage.css";
 import Topbar from "../../Layouts/Top-Bar/Topbar";
-function Mainpage() {
+const Mainpage = () => {
   return (
     <div className="site">
       <Topbar />
@@ -26,5 +26,5 @@ function Mainpage() {
       <div className="colum"></div>
     </div>
   );
-}
+};
 export default Mainpage;

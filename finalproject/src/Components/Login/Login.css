@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .background {
@@ -104,6 +105,7 @@ label {
 
 .line {
   display: inline-block;
+  text-decoration: none;
 }
 .background {
   background-image: url("../../Layouts/Images/1512217.jpg");

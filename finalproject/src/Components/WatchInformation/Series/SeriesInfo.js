@@ -14,6 +14,7 @@ const SeriesInfo = () => {
   const fetchId = async () => {
     const respo = await apiService.get(`/TVSeries/TVById${Id}`);
     setSeriesId(respo.data);
+    console.log(respo.data);
   };
   React.useEffect(() => {
     fetchId();
@@ -22,30 +23,30 @@ const SeriesInfo = () => {
   return (
     <div>
       <Topbar />
+      <img
+        className="BackdropPathh"
+        src={`https://image.tmdb.org/t/p/original${seriesId.BackdropPath}`}
+        alt=""
+      />
       <div className="Poster">
         {seriesId.Name === undefined ? (
           <Loading />
         ) : (
-          <div className="Watch-Info">
-            <div>
+          <div className="Watch-Infoo">
+            <div className="Info">
               <img
-                className="BackdropPath"
-                src={`https://image.tmdb.org/t/p/original${seriesId.BackdropPath}`}
-                alt=""
-              />
-            </div>
-            <img
-              className="Backpath"
-              src={`https://image.tmdb.org/t/p/original/${seriesId.PosterPath}`}
-              alt="nice"
-            ></img>
-            <div className="Info-Name">
-              <h1>{seriesId.Name}</h1>
-              <h3>{seriesId.Genres.Name}</h3>
-            </div>
-            <div className="Overview">
-              <h1>Overview</h1>
-              {seriesId.Overview}
+                className="Backpathh"
+                src={`https://image.tmdb.org/t/p/original/${seriesId.PosterPath}`}
+                alt="nice"
+              ></img>
+              <h1 className="Info-Namee">
+                {seriesId.Name}
+                <div className="trailer"></div>
+              </h1>
+              <div className="Overvieww">
+                <h1>Overview IMDB : {seriesId.VoteAverage}</h1>
+                {seriesId.Overview}
+              </div>
             </div>
           </div>
         )}

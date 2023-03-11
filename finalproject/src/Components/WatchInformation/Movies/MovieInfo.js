@@ -32,19 +32,17 @@ const MovieInfo = () => {
   return (
     <div>
       <Topbar />
+      <img
+        className="BackdropPathh"
+        src={`https://image.tmdb.org/t/p/original${movieId.BackdropPath}`}
+        alt=""
+      />
       <div className="Posterr">
         <div className="Watch-Infoo">
-          <div>
-            <img
-              className="BackdropPathh"
-              src={`https://image.tmdb.org/t/p/original${movieId.BackdropPath}`}
-              alt=""
-            />
-          </div>
           <div className="Info">
             <img
               className="Backpathh"
-              src={`https://image.tmdb.org/t/p/w300/${movieId.PosterPath}`}
+              src={`https://image.tmdb.org/t/p/original/${movieId.PosterPath}`}
               alt="nice"
             ></img>
             <h1 className="Info-Namee">

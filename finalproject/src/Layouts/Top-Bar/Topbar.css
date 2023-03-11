@@ -18,6 +18,8 @@
 .titles {
   font-size: large;
   width: 80px;
+  text-decoration: none;
+  margin-left: 10px;
 }
 .titles:hover {
   color: rgb(136, 136, 216);
@@ -42,9 +44,13 @@
 }
 .logout {
   font-size: large;
+  text-decoration: none;
   margin-left: 10px;
 }
 .logout:hover {
   color: brown;
   transition: 0.9s;
+}
+.title {
+  text-decoration: none;
 }

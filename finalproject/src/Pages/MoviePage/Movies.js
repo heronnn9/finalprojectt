@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import "./Movies.css";
 import "./MovieContainer/MovieContainer";
 import { useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MovieContainer from "./MovieContainer/MovieContainer";
 import Loading from "../../Layouts/Loading/Loading";
 import Topbar from "../../Layouts/Top-Bar/Topbar";
@@ -11,7 +11,7 @@ import Categories from "../../Components/Categories/Categories";
 
 const Movies = () => {
   const [category, setCategory] = useState([]);
-  let [query, setQuery] = useSearchParams();
+  let [query, setQuery] = useSearchParams("");
   const [loading, setLoading] = useState(false);
   const [testResult, setTestResult] = useState({
     Results: [],
@@ -32,7 +32,7 @@ const Movies = () => {
     const testCategory = await apiService.get("Movie/genre");
     setCategory(testCategory.data);
   };
-  React.useEffect(() => {
+  useEffect(() => {
     fetchMovies();
     fetchCategory();
   }, [query]);
@@ -54,9 +54,6 @@ const Movies = () => {
             {category.length > 0 &&
               category.map((categoryData) => {
                 return (
-                  // <option key={categoryData.Id} value={categoryData.Id}>
-                  //   {categoryData.Name}
-                  // </option>
                   <Fragment key={categoryData.id}>
                     <Categories category={categoryData} key={categoryData.id} />
                   </Fragment>
@@ -64,6 +61,7 @@ const Movies = () => {
               })}
           </select>
         </div>
+        <div className="Search"></div>
         <div className="movies">
           <div className="movie-banner">
             <div className="MovieContainer">

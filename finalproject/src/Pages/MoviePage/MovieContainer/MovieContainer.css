@@ -30,6 +30,7 @@
 }
 .Movie-Adı {
   font-size: large;
+  text-decoration: none;
 }
 .Related-Date {
   font-size: small;

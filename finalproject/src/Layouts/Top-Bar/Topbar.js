@@ -18,7 +18,7 @@ const Topbar = () => {
       <div></div>
       <div className="logo2" />
       <Link to="/mainpage" className="title">
-        Moviestagram
+        <h2>Moviestagram</h2>
       </Link>
       <div className="pages">
         <div className="selam">

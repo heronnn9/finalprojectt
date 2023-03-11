@@ -13,8 +13,6 @@
   filter: brightness(30%);
 }
 .Posterr {
-  display: flex;
-  flex-direction: row;
   margin-top: 64px;
 }
 .Overvieww {
@@ -28,7 +26,6 @@
 }
 .Watch-Infoo {
   position: relative;
-  color: white;
 }
 .Info-Namee {
   position: absolute;
