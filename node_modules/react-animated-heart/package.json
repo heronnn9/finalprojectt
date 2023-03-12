@@ -1,0 +1,55 @@
+{
+	"name": "react-animated-heart",
+	"version": "0.0.7",
+	"description": "Simple Twitter-like animated heart",
+	"main": "dist/index.js",
+	"private": false,
+	"repository": "git@github.com:ShaunLWM/react-animated-heart.git",
+	"author": "ShaunLWM",
+	"license": "MIT",
+	"keywords": [
+		"twitter-heart",
+		"twitter-animated-heart",
+		"like button",
+		"heart button",
+		"heart",
+		"exploding button"
+	],
+	"dependencies": {
+		"goober": "^2.1.9",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-scripts": "4.0.3"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"publish:npm": "rm -rf dist && mkdir dist && babel src/components -d dist --copy-files"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.13.14",
+		"@babel/preset-react": "^7.13.13"
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-react"
+		]
+	}
+}

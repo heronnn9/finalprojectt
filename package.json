@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "react-animated-heart": "^0.0.7",
+    "react-heart": "^1.0.6",
     "react-youtube": "^10.1.0"
   }
 }

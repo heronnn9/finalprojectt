@@ -6,7 +6,7 @@
   left: 0;
   height: 64px;
   width: 100%;
-  z-index: 9999;
+  z-index: 9999999;
   transition: top 0.2s linear;
   /* background-color: rgb(3, 37, 65); */
   background-color: rgb(48, 30, 103);
@@ -53,4 +53,13 @@
 }
 .title {
   text-decoration: none;
+}
+.logo2 {
+  background-image: url(../Images/logo.png);
+  background-position: center;
+  margin-bottom: 20px;
+  background-size: 160px;
+  background-repeat: no-repeat;
+  height: 80px;
+  width: 80px;
 }

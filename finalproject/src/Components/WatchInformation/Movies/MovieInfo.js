@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Topbar from "../../../Layouts/Top-Bar/Topbar";
 import "../../../Pages/MoviePage/MovieContainer/MovieContainer";
 import "./MovieInfo.css";
+import AddFavorite from "../../AddFavorite/AddFavorite";
 const MovieInfo = () => {
   const [movieId, setMovieId] = useState([]);
   const [trailer, setTrailer] = useState("");
@@ -45,12 +46,17 @@ const MovieInfo = () => {
               src={`https://image.tmdb.org/t/p/original/${movieId.PosterPath}`}
               alt="nice"
             ></img>
-            <h1 className="Info-Namee">
-              {movieId.Title}
+            <div className="Info-Namee">
+              <div className="Selam">
+                <h1>{movieId.Title}</h1>
+                <h1 className="Add-Favorites">
+                  Add to Favorite List : {AddFavorite()}
+                </h1>
+              </div>
               <div className="trailer">
                 <Youtube videoId={`${trailer}`} />
               </div>
-            </h1>
+            </div>
             <div className="Overvieww">
               <h1>Overview IMDB : {movieId.VoteAverage}</h1>
               {movieId.Overview}

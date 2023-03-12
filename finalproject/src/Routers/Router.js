@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import App from "../Pages/LoginPage/App";
+import App from "../App";
 import Mainpage from "../Pages/MainPage/Mainpage";
 import Movies from "../Pages/MoviePage/Movies";
 import Series from "../Pages/SeriesPage/Series";
 import Profile from "../Pages/Profile-Page/Profile";
 import SeriesInfo from "../Components/WatchInformation/Series/SeriesInfo";
 import MovieInfo from "../Components/WatchInformation/Movies/MovieInfo";
-import Register from "../Components/RegisterPage/Register";
+import Register from "../Pages/RegisterPage/Register";
 function Routers() {
   return (
     <BrowserRouter>

@@ -24,6 +24,7 @@ const Movies = () => {
       `Movie/${query.get("GenreIds") ?? "28"}/${query.get("pageNumber") ?? "1"}`
     );
     setTestResult(testData.data);
+    console.log(testData);
     setTimeout(() => {
       setLoading(false);
     }, 500);
@@ -61,7 +62,6 @@ const Movies = () => {
               })}
           </select>
         </div>
-        <div className="Search"></div>
         <div className="movies">
           <div className="movie-banner">
             <div className="MovieContainer">

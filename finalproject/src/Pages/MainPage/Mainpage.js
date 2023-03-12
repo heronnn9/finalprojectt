@@ -1,29 +1,33 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "./Mainpage.css";
+import apiService from "../../Services/API/Api";
 import Topbar from "../../Layouts/Top-Bar/Topbar";
+import Search from "../../Components/Search/Search";
+import List from "../../Components/Search/SearchMSList/List";
+
 const Mainpage = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const [movie, setMovie] = useState([]);
+
+  const fetchMovies = async () => {
+    const testdata = await apiService.get(
+      `/Movie/Search/1?query=${searchValue}}}`
+    );
+    setMovie(testdata.data);
+    console.log(testdata.data.Results);
+  };
+
+  useEffect(() => {
+    fetchMovies(searchValue);
+  }, [searchValue]);
   return (
     <div className="site">
       <Topbar />
-      <div className="search">
-        <div className="search-bar">
-          <div className="search-bar-color">
-            <div className="Yazılar">
-              <div className="Welcome">Welcome.</div>
-              <div className="Under Welcome"></div>
-              Millions of movies, TV shows and people to discover. Explore now.{" "}
-            </div>
-            <div className="search-input">
-              <input
-                type="text"
-                placeholder="Film Dizi Kişi Ara..."
-                className="search-input"
-              />
-            </div>
-          </div>
-        </div>
+      <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+      <div>
+        {movie &&
+          movie.Results.map((movie) => <List key={movie} movie={movie} />)}
       </div>
-      <div className="colum"></div>
     </div>
   );
 };

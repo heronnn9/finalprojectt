@@ -1,0 +1,20 @@
+.Search-Input {
+  margin-top: 4%;
+  width: 80vw;
+  height: 20vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://collider.com/wp-content/uploads/the-avengers-movie-poster-banners-04.jpg");
+  background-size: contain;
+  box-shadow: 0 0 5px 2px #282a2d;
+  background-repeat: repeat;
+}
+.Bg {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.Search {
+  margin-top: 15%;
+  width: 40%;
+  height: 20%;
+}

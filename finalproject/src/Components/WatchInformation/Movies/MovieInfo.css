@@ -22,13 +22,15 @@
   display: flex;
   flex-direction: column;
   left: 10%;
-  margin-top: 25%;
+  margin-top: 35%;
 }
 .Watch-Infoo {
   position: relative;
 }
 .Info-Namee {
   position: absolute;
+  display: flex;
+  flex-direction: column;
   top: 5%;
   left: 30%;
   color: wheat;
@@ -36,4 +38,12 @@
 .Info {
   display: flex;
   flex-direction: row;
+}
+.Selam {
+  width: 65vw;
+  display: flex;
+  justify-content: space-between;
+}
+.Add-Favorites {
+  margin-left: 2%;
 }
