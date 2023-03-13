@@ -25,8 +25,9 @@ const Mainpage = () => {
       <Topbar />
       <Search searchValue={searchValue} setSearchValue={setSearchValue} />
       <div>
-        {movie &&
-          movie.Results.map((movie) => <List key={movie} movie={movie} />)}
+        {movie.Results?.map((movie, index) => (
+          <List key={index} movie={movie} />
+        ))}
       </div>
     </div>
   );
