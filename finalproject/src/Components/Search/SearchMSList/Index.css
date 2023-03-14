@@ -1,6 +1,17 @@
 .List {
-  width: 100%;
+  width: 180px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 250px;
+  margin-left: 25px;
+  margin-top: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Filmler {
+  width: 90vw;
   display: flex;
+  height: auto;
   flex-wrap: wrap;
-  margin: 5px;
+  flex-direction: row;
 }

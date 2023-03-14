@@ -1,62 +1,29 @@
-import { useRef, useState, useEffect, useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import AuthContext from "../../context/AuthProvider";
 import apiServices from "../../Services/API/Api";
 import "./Login.css";
 const LOGIN_URL = "/User/Login";
 const Login = () => {
-  const { setAuth } = useContext(AuthContext);
-  const userRef = useRef();
-  const errRef = useRef();
   const [email, setEMail] = useState("");
+  const [user, setUser] = useState();
   const [password, setPassword] = useState("");
-  const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
-
-  useEffect(() => {
-    userRef.current.focus();
-  }, []);
-  useEffect(() => {
-    setErrMsg(``);
-  }, [email, password]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      const response = await apiServices.post(
-        LOGIN_URL,
-        JSON.stringify({ email, password }),
-        {
-          headers: { "Context-Type ": `application/json` },
-          withCredentials: true,
-        }
-      );
-      console.log(JSON.stringify(response?.data));
-      const accessToken = response?.data?.accessToken;
-      const roles = response?.data.roles;
-      setAuth({ email, password, roles, accessToken });
-      setEMail(``);
-      setPassword(``);
-      setSuccess(true);
-    } catch (err) {
-      if (!err?.response) {
-        setErrMsg("No Server Response");
-      } else if (err.response?.status === 400) {
-        setErrMsg(`Missing Email or Password`);
-      } else if (err.response?.status === 401) {
-        setErrMsg("Unauthorized");
-      } else {
-        setErrMsg("Login Failed");
-      }
-      errRef.current.focus();
-    }
+    const user = { email, password };
+    const response = await apiServices.post(LOGIN_URL, user);
+    console.log(response);
+    setUser(response.data);
+    setSuccess(true);
+    localStorage.setItem(user, response.data);
+    console.log(response.data);
   };
   return (
     <div className="background">
       {success ? (
         <section>
-          <h1>You are logged in!</h1>
+          <h1>{user.EMail}You are logged in!</h1>
           <br />
           <p>
             <Link to="/mainpage">Go to Home</Link>
@@ -64,13 +31,7 @@ const Login = () => {
         </section>
       ) : (
         <section>
-          <p
-            ref={errRef}
-            className={errMsg ? "errmsg" : "offscreen"}
-            aria-live="assertive"
-          >
-            {errMsg}
-          </p>
+          <p aria-live="assertive"></p>
           <h1>Sign In</h1>
           <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="email">Email:</label>
@@ -78,7 +39,6 @@ const Login = () => {
               className="Login-Input"
               type="text"
               id="user"
-              ref={userRef}
               autoComplete="off"
               onChange={(e) => setEMail(e.target.value)}
               value={email}

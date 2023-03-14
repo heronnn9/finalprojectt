@@ -5,14 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import apiService from "../../Services/API/Api";
 const Topbar = () => {
-  const [, setName] = useState("");
+  const [name, setName] = useState([]);
+  const [user, setUser] = useState("");
 
   useEffect(() => {
-    apiService.get("/User").then((respo) => {
-      setName(respo);
-      // console.log(respo);
+    const getUser = apiService.get("/User").then((respo) => {
+      setName(respo.data.Name);
+      console.log(respo);
     });
   }, []);
+
   return (
     <div className="top-bar">
       <div></div>
@@ -34,7 +36,6 @@ const Topbar = () => {
         <div className="selam">
           <Link to="/Profile">
             <div className="profile-title">
-              selam
               <FontAwesomeIcon icon={faUser} />
             </div>
           </Link>

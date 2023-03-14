@@ -4,7 +4,6 @@ import apiService from "../../Services/API/Api";
 import Topbar from "../../Layouts/Top-Bar/Topbar";
 import Search from "../../Components/Search/Search";
 import List from "../../Components/Search/SearchMSList/List";
-
 const Mainpage = () => {
   const [searchValue, setSearchValue] = useState("");
   const [movie, setMovie] = useState([]);
@@ -24,7 +23,7 @@ const Mainpage = () => {
     <div className="site">
       <Topbar />
       <Search searchValue={searchValue} setSearchValue={setSearchValue} />
-      <div>
+      <div className="Filmler">
         {movie.Results?.map((movie, index) => (
           <List key={index} movie={movie} />
         ))}

@@ -17,6 +17,7 @@ const User = () => {
       }
     };
     getUser();
+
     return () => {
       isMounted = false;
       controller.abort();
