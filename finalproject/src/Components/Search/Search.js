@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "./Search.css";
 const Search = (props) => {
   return (
@@ -10,7 +8,7 @@ const Search = (props) => {
           value={props.value}
           className="Search"
           type="text"
-          placeholder="type to search"
+          placeholder="Find Movie press the search"
         />
       </div>
     </div>

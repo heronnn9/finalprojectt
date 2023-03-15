@@ -7,20 +7,23 @@ import Profile from "../Pages/Profile-Page/Profile";
 import SeriesInfo from "../Components/WatchInformation/Series/SeriesInfo";
 import MovieInfo from "../Components/WatchInformation/Movies/MovieInfo";
 import Register from "../Pages/RegisterPage/Register";
+import { GlobalProvider } from "../Context/GlobalState";
 function Routers() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/mainpage" element={<Mainpage />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/MovieInfo/:Id" element={<MovieInfo />} />
-        <Route path="/series" element={<Series />} />
-        <Route path="/series/SeriesInfo/:Id" element={<SeriesInfo />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </BrowserRouter>
+    <GlobalProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/mainpage" element={<Mainpage />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/MovieInfo/:Id" element={<MovieInfo />} />
+          <Route path="/series" element={<Series />} />
+          <Route path="/series/SeriesInfo/:Id" element={<SeriesInfo />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
+    </GlobalProvider>
   );
 }
 export default Routers;

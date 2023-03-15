@@ -32,7 +32,7 @@ const Login = () => {
       ) : (
         <section>
           <p aria-live="assertive"></p>
-          <h1>Sign In</h1>
+          <h1>Welcome to the Moviestagram</h1>
           <form className="form" onSubmit={handleSubmit}>
             <label htmlFor="email">Email:</label>
             <input

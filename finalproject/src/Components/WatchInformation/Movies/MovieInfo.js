@@ -5,7 +5,6 @@ import apiService from "../../../Services/API/Api";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Topbar from "../../../Layouts/Top-Bar/Topbar";
-import "../../../Pages/MoviePage/MovieContainer/MovieContainer";
 import "./MovieInfo.css";
 import AddFavorite from "../../AddFavorite/AddFavorite";
 const MovieInfo = () => {

@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
 import "./Movies.css";
-import "./MovieContainer/MovieContainer";
+import MovieContainer from "../../Components/Cards/MovieCards/MovieContainer";
 import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import MovieContainer from "./MovieContainer/MovieContainer";
 import Loading from "../../Layouts/Loading/Loading";
 import Topbar from "../../Layouts/Top-Bar/Topbar";
 import apiService from "../../Services/API/Api";

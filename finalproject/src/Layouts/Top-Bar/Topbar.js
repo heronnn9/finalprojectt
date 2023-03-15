@@ -6,19 +6,16 @@ import { faUser } from "@fortawesome/free-regular-svg-icons";
 import apiService from "../../Services/API/Api";
 const Topbar = () => {
   const [name, setName] = useState([]);
-  const [user, setUser] = useState("");
 
   useEffect(() => {
-    const getUser = apiService.get("/User").then((respo) => {
+    apiService.get("/User").then((respo) => {
       setTimeout(() => {}, 600);
       setName(respo.data);
-      console.log(respo.data);
     });
   }, []);
   const found = name.find((obj) => {
     return obj.Id === 7;
   });
-  console.log(found);
 
   return (
     <div className="top-bar">

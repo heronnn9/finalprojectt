@@ -13,7 +13,6 @@ const Mainpage = () => {
       `/Movie/Search/1?query=${searchValue}}}`
     );
     setMovie(testdata.data);
-    console.log(testdata.data.Results);
   };
 
   useEffect(() => {

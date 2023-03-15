@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { GlobalContext } from "../../Context/GlobalState";
 import apiService from "../../Services/API/Api";
 import Topbar from "../../Layouts/Top-Bar/Topbar";
 import "./Profile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import FavoriteCard from "../../Components/Cards/FavoriteCards/FavoriteCard";
 const Profile = () => {
   const [name, setName] = useState([]);
-
+  const { favoritelist } = useContext(GlobalContext);
   useEffect(() => {
     const getUser = apiService.get("/User").then((respo) => {
       setTimeout(() => {}, 600);
@@ -32,7 +34,14 @@ const Profile = () => {
         </div>
       </div>
       <div className="Under-Info">
-        <h1>Favoriler</h1>
+        <div>
+          <h1>Favoriler</h1>
+          <div>
+            {favoritelist.map((movie) => (
+              <FavoriteCard movie={movie} />
+            ))}
+          </div>
+        </div>
         <h1>Favori Listesi Oluştur</h1>
       </div>
     </div>

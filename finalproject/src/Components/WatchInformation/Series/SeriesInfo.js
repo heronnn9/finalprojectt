@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Topbar from "../../../Layouts/Top-Bar/Topbar";
 
-import "../../../Pages/MoviePage/MovieContainer/MovieContainer";
 import "./SeriesInfo.css";
 import Loading from "../../../Layouts/Loading/Loading";
 import apiService from "../../../Services/API/Api";
