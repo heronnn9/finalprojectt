@@ -38,3 +38,19 @@
 .Surname {
   margin-left: 8px;
 }
+.Favorites {
+  width: 50vw;
+  display: flex;
+  height: auto;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.Favori-Text {
+  display: flex;
+  align-items: center;
+  padding-left: 20vw;
+}
+.CrtFvrt-txt {
+  display: flex;
+  padding-right: 20vw;
+}

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../Context/GlobalState";
+
 export const CardControl = ({ movie, type }) => {
   const { removeMovieFromFavoriteList } = useContext(GlobalContext);
 

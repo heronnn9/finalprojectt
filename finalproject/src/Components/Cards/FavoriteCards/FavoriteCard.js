@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CardControl } from "../../CardControls/CardControl";
-import "../MovieCards/MovieContainer.css";
+import "./FavoriteCard.css";
 const MovieContainer = ({ movie, type }) => {
   return (
-    <div className="Movie-Container">
+    <div className="Card-Container">
       <img
-        className="Movie-Banner"
+        className="Card-Banner"
         src={`https://image.tmdb.org/t/p/w400${movie.PosterPath}`}
         alt="nice"
       ></img>

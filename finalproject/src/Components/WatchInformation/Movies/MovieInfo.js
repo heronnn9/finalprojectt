@@ -6,9 +6,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Topbar from "../../../Layouts/Top-Bar/Topbar";
 import "./MovieInfo.css";
-import AddFavorite from "../../AddFavorite/AddFavorite";
 const MovieInfo = () => {
-  const [addFavorite, setAddFavorite] = useState([]);
   const [movieId, setMovieId] = useState([]);
   const [trailer, setTrailer] = useState("");
   const { Id } = useParams();
@@ -49,9 +47,7 @@ const MovieInfo = () => {
             <div className="Info-Namee">
               <div className="Selam">
                 <h1>{movieId.Title}</h1>
-                <h1 className="Add-Favorites">
-                  Add to Favorite List : {AddFavorite()}
-                </h1>
+                {/* <h1 className="Add-Favorites"></h1> */}
               </div>
               <div className="trailer">
                 <Youtube videoId={`${trailer}`} />

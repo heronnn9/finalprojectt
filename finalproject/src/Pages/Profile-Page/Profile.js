@@ -35,14 +35,14 @@ const Profile = () => {
       </div>
       <div className="Under-Info">
         <div>
-          <h1>Favoriler</h1>
-          <div>
+          <h1 className="Favori-Text">Favoriler</h1>
+          <div className="Favorites">
             {favoritelist.map((movie) => (
               <FavoriteCard movie={movie} />
             ))}
           </div>
         </div>
-        <h1>Favori Listesi Oluştur</h1>
+        <h1 className="CrtFvrt-txt">Favori Listesi Oluştur</h1>
       </div>
     </div>
   );

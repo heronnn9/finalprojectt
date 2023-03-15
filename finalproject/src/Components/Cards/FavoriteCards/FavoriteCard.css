@@ -1,0 +1,26 @@
+.Card-Banner {
+  width: 180px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 250px;
+  margin-left: 25px;
+  margin-top: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.Movie-Container {
+  transition: 0.5s all;
+}
+.Movie-Container:hover {
+  transform: scale(1.2);
+}
+
+.Movie-Adı {
+  font-size: large;
+  text-decoration: none;
+}
+.Name-Relase {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
