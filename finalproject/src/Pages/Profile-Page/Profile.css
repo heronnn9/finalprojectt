@@ -1,9 +1,12 @@
 .profile {
   display: flex;
 }
+.Profil {
+  color: aliceblue;
+}
 .user-info {
   width: 100vw;
-  height: 15vw;
+  height: 10vw;
   margin-top: 56px;
   display: flex;
   background-image: url(./Profile-Page-Image/istockphoto-1339787499-170667a.jpg);
@@ -14,16 +17,24 @@
   border: 4px solid black;
   border-radius: 50%;
   background-color: rgb(255, 193, 77);
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   justify-content: center;
   align-items: center;
-  font-size: 80px;
+  font-size: 40px;
   margin-left: 1em;
   margin-top: 0.35em;
 }
 .personal-info {
+  display: flex;
   margin-top: 2em;
   margin-left: 40px;
   color: rgb(194, 194, 194);
+}
+.Under-Info {
+  display: flex;
+  justify-content: space-between;
+}
+.Surname {
+  margin-left: 8px;
 }

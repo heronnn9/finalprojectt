@@ -10,10 +10,15 @@ const Topbar = () => {
 
   useEffect(() => {
     const getUser = apiService.get("/User").then((respo) => {
-      setName(respo.data.Name);
-      console.log(respo);
+      setTimeout(() => {}, 600);
+      setName(respo.data);
+      console.log(respo.data);
     });
   }, []);
+  const found = name.find((obj) => {
+    return obj.Id === 7;
+  });
+  console.log(found);
 
   return (
     <div className="top-bar">
@@ -25,10 +30,10 @@ const Topbar = () => {
       <div className="pages">
         <div className="selam">
           <Link to="/movies" className="titles">
-            Movies
+            Popular Movies
           </Link>
           <Link to="/series" className="titles">
-            Series
+            Popular Series
           </Link>
           <div className="titles">Explore</div>
           <div className="titles">Top 100</div>
@@ -36,6 +41,7 @@ const Topbar = () => {
         <div className="selam">
           <Link to="/Profile">
             <div className="profile-title">
+              {found?.Name}
               <FontAwesomeIcon icon={faUser} />
             </div>
           </Link>

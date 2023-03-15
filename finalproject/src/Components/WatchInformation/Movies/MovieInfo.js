@@ -9,6 +9,7 @@ import "../../../Pages/MoviePage/MovieContainer/MovieContainer";
 import "./MovieInfo.css";
 import AddFavorite from "../../AddFavorite/AddFavorite";
 const MovieInfo = () => {
+  const [addFavorite, setAddFavorite] = useState([]);
   const [movieId, setMovieId] = useState([]);
   const [trailer, setTrailer] = useState("");
   const { Id } = useParams();

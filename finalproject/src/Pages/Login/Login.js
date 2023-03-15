@@ -17,7 +17,7 @@ const Login = () => {
     setUser(response.data);
     setSuccess(true);
     localStorage.setItem(user, response.data);
-    console.log(response.data);
+    console.log(response.data.Name);
   };
   return (
     <div className="background">
