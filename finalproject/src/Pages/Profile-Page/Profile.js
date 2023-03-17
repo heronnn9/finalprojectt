@@ -1,24 +1,18 @@
 import { useEffect, useState, useContext } from "react";
 import { GlobalContext } from "../../Context/GlobalState";
-import apiService from "../../Services/API/Api";
 import Topbar from "../../Layouts/Top-Bar/Topbar";
 import "./Profile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import FavoriteCard from "../../Components/Cards/FavoriteCards/FavoriteCard";
 const Profile = () => {
-  const [name, setName] = useState([]);
-  const { favoritelist } = useContext(GlobalContext);
+  const [user, setUser] = useState("");
+
+  const jsonData = localStorage.getItem("user");
   useEffect(() => {
-    const getUser = apiService.get("/User").then((respo) => {
-      setTimeout(() => {}, 600);
-      setName(respo.data);
-      console.log(respo.data);
-    });
-  }, []);
-  const found = name.find((obj) => {
-    return obj.Id === 7;
-  });
+    setUser(JSON.parse(jsonData));
+  }, [jsonData]);
+  const { favoritelist } = useContext(GlobalContext);
   return (
     <div className="Profil">
       <Topbar />
@@ -28,8 +22,7 @@ const Profile = () => {
             <FontAwesomeIcon icon={faUser} />
           </div>
           <div className="personal-info">
-            <h2>{found?.Name}</h2>
-            <h2 className="Surname">{found?.Surname}</h2>
+            <h2>{user.Name}</h2>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import apiServices from "../../Services/API/Api";
 import "./Login.css";
@@ -16,9 +16,16 @@ const Login = () => {
     console.log(response);
     setUser(response.data);
     setSuccess(true);
-    localStorage.setItem(user, response.data);
-    console.log(response.data.Name);
+    localStorage.setItem("user", JSON.stringify(response.data));
+    console.log(response.data);
   };
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem(user);
+  //   if (loggedInUser) {
+  //     const foundUser = JSON.parse(loggedInUser);
+  //     setUser(foundUser);
+  //   }
+  // }, [user]);
   return (
     <div className="background">
       {success ? (

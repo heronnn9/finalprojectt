@@ -3,19 +3,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import apiService from "../../Services/API/Api";
 const Topbar = () => {
-  const [name, setName] = useState([]);
+  const [user, setUser] = useState("");
 
+  const jsonData = localStorage.getItem("user");
   useEffect(() => {
-    apiService.get("/User").then((respo) => {
-      setTimeout(() => {}, 600);
-      setName(respo.data);
-    });
-  }, []);
-  const found = name.find((obj) => {
-    return obj.Id === 7;
-  });
+    setUser(JSON.parse(jsonData));
+    console.log(jsonData);
+  }, [jsonData]);
 
   return (
     <div className="top-bar">
@@ -38,7 +33,7 @@ const Topbar = () => {
         <div className="selam">
           <Link to="/Profile">
             <div className="profile-title">
-              {found?.Name}
+              {user.Name}
               <FontAwesomeIcon icon={faUser} />
             </div>
           </Link>
