@@ -1,10 +1,21 @@
 import { GlobalContext } from "../../../Context/GlobalState";
 import "./Index.css";
-import { useContext } from "react";
+import apiService from "../../../Services/API/Api";
+import { useContext, useState, useEffect } from "react";
 const List = ({ movie }) => {
+  const [user, setUser] = useState("");
+  const [favoriteMovie, setFavoriteMovie] = useState("");
   const { addMovieToFavoriteList, favoritelist } = useContext(GlobalContext);
   let storedMovie = favoritelist.find((o) => o.Id === movie.Id);
   const favoritelistDisabled = storedMovie ? true : false;
+  const addMovieFavoriteList = async (e) => {
+    e.preventDefault();
+  };
+  const jsonData = localStorage.getItem("user");
+  useEffect(() => {
+    setUser(JSON.parse(jsonData));
+    console.log(jsonData);
+  }, [jsonData]);
   return (
     <>
       <div>

@@ -9,7 +9,7 @@
   z-index: 9999999;
   transition: top 0.2s linear;
   /* background-color: rgb(3, 37, 65); */
-  background-color: rgb(48, 30, 103);
+  background-color: #000000;
   color: white;
 }
 .selam {
@@ -19,6 +19,7 @@
   font-size: large;
   width: 120px;
   text-decoration: none;
+  color: red;
   margin-left: 10px;
 }
 .titles:hover {
@@ -62,4 +63,7 @@
   background-repeat: no-repeat;
   height: 80px;
   width: 80px;
+}
+.Logo {
+  color: red;
 }

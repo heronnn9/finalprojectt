@@ -41,26 +41,26 @@ const Movies = () => {
     <div>
       <Topbar />
       <div className="Name">Categories</div>
+      <div className="categories">
+        <select
+          className="selects"
+          onChange={(e) => {
+            setQuery({
+              GenreIds: e.target.value,
+            });
+          }}
+        >
+          {category.length > 0 &&
+            category.map((categoryData) => {
+              return (
+                <Fragment key={categoryData.id}>
+                  <Categories category={categoryData} key={categoryData.id} />
+                </Fragment>
+              );
+            })}
+        </select>
+      </div>
       <div className="movie-categories">
-        <div className="categories">
-          <select
-            className="selects"
-            onChange={(e) => {
-              setQuery({
-                GenreIds: e.target.value,
-              });
-            }}
-          >
-            {category.length > 0 &&
-              category.map((categoryData) => {
-                return (
-                  <Fragment key={categoryData.id}>
-                    <Categories category={categoryData} key={categoryData.id} />
-                  </Fragment>
-                );
-              })}
-          </select>
-        </div>
         <div className="movies">
           <div className="movie-banner">
             <div className="MovieContainer">

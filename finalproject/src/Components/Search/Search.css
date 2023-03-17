@@ -3,10 +3,11 @@
   width: 80vw;
   height: 20vw;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("https://collider.com/wp-content/uploads/the-avengers-movie-poster-banners-04.jpg");
-  background-size: contain;
+    url("https://wallpaper.dog/large/5445110.jpg");
+  background-size: 1200px;
+  background-position: center;
   box-shadow: 0 0 5px 2px #282a2d;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
 }
 .Bg {
   display: flex;

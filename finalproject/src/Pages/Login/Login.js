@@ -30,7 +30,8 @@ const Login = () => {
     <div className="background">
       {success ? (
         <section>
-          <h1>{user.EMail}You are logged in!</h1>
+          <h1>Welcome {user.Name} </h1>
+          <h1>You are logged in!</h1>
           <br />
           <p>
             <Link to="/mainpage">Go to Home</Link>

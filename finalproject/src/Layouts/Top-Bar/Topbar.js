@@ -16,7 +16,7 @@ const Topbar = () => {
     <div className="top-bar">
       <div></div>
       <div className="logo2" />
-      <Link to="/mainpage" className="title">
+      <Link to="/mainpage">
         <h2>Moviestagram</h2>
       </Link>
       <div className="pages">
@@ -28,7 +28,6 @@ const Topbar = () => {
             Popular Series
           </Link>
           <div className="titles">Explore</div>
-          <div className="titles">Top 100</div>
         </div>
         <div className="selam">
           <Link to="/Profile">
