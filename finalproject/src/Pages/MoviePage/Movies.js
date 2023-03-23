@@ -75,6 +75,7 @@ const Movies = () => {
           </div>
           <div className="page-numbers">
             <button
+              className="Pagination"
               onClick={() => {
                 setQuery({
                   genreId: query.get("genreIds") ?? "28",
@@ -82,9 +83,10 @@ const Movies = () => {
                 });
               }}
             >
-              Back Page
+              Page : {testResult.Page - 1}
             </button>{" "}
             <button
+              className="Pagination"
               onClick={() => {
                 setQuery({
                   genreId: query.get("genreIds") ?? "28",
@@ -92,7 +94,7 @@ const Movies = () => {
                 });
               }}
             >
-              Next Page {testResult.Page + 1}
+              Page: {testResult.Page + 1}
             </button>{" "}
           </div>
         </div>
