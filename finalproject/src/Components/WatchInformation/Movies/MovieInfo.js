@@ -12,7 +12,7 @@ const MovieInfo = () => {
   const { Id } = useParams();
   const fetchId = async () => {
     await axios
-      .get(`https://localhost:7298/api/Movie/GetMovieById${Id}`)
+      .get(`https://moviestagram.azurewebsites.net/api/Movie/GetMovieById${Id}`)
       .then((respo) => {
         setMovieId(respo.data);
       });
@@ -42,7 +42,7 @@ const MovieInfo = () => {
             <img
               className="Backpathh"
               src={`https://image.tmdb.org/t/p/original/${movieId.PosterPath}`}
-              alt="nice"
+              alt=""
             ></img>
             <div className="Info-Namee">
               <div className="Selam">
