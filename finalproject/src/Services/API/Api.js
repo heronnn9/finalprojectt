@@ -1,7 +1,7 @@
 import axios from "axios";
 const apiService = {};
 const apiGateway = axios.create({
-  baseURL: "https://localhost:7298/api",
+  baseURL: "https://moviestagram.azurewebsites.net/api",
 });
 //https://localhost:7298/api
 apiService.get = (url) => apiGateway.get(url);
