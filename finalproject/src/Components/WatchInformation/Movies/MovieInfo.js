@@ -47,16 +47,17 @@ const MovieInfo = () => {
             <div className="Info-Namee">
               <div className="Selam">
                 <h1>{movieId.Title}</h1>
-                {/* <h1 className="Add-Favorites"></h1> */}
+                <div>{movieId.Overview}</div>
               </div>
               <div className="trailer">
                 <Youtube videoId={`${trailer}`} />
+                <h1> IMDB : {movieId.VoteAverage}</h1>
               </div>
             </div>
-            <div className="Overvieww">
+            {/* <div className="Overvieww">
               <h1>Overview IMDB : {movieId.VoteAverage}</h1>
               {movieId.Overview}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

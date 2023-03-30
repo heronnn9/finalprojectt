@@ -27,13 +27,13 @@ const Topbar = () => {
           <Link to="/series" className="titles">
             Popular Series
           </Link>
-          <div className="title">Explore</div>
+          <div className="titles">Explore</div>
         </div>
         <div className="selam">
           <Link to="/Profile">
             <div className="profile-title">
               {user.Name}
-              <FontAwesomeIcon icon={faUser} />
+              <FontAwesomeIcon className="User-Icon" icon={faUser} />
             </div>
           </Link>
           <Link className="logout" to="/">

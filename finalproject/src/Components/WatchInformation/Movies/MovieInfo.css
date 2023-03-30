@@ -42,7 +42,7 @@
 .Selam {
   width: 65vw;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 .Add-Favorites {
   margin-left: 2%;

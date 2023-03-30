@@ -6,7 +6,7 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Register.css";
+import "../Login/Login.css";
 import apiService from "../../Services/API/Api";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{2,23}$/;

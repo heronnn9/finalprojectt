@@ -1,0 +1,57 @@
+.Login-Background {
+  background-image: url("../../Layouts/Images/1512217.jpg");
+  background-size: cover;
+  position: fixed;
+  filter: brightness(50%);
+  width: 100vw;
+  height: 100vh;
+}
+.Login-Form {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.Form {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: aliceblue;
+  width: 40vw;
+  height: 70vh;
+}
+.Login-Icon {
+  font-size: xxx-large;
+}
+.Login-Inputs {
+  display: flex;
+  flex-direction: column;
+}
+.labels {
+  font-size: x-large;
+}
+.Login-Input {
+  width: 40vh;
+}
+.Forms {
+  display: flex;
+  flex-direction: column;
+}
+.Log-In {
+  margin-top: 24px;
+  height: 2vw;
+  background-color: rgb(241, 164, 31);
+  text-decoration: none;
+  border-radius: 8px;
+  margin-left: 40%;
+  width: 100px;
+}
+.Register {
+  font-family: "Aref Ruqaa Ink", serif;
+  font-size: x-large;
+}

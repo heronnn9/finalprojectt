@@ -17,21 +17,24 @@
 }
 .titles {
   font-size: large;
-  width: 120px;
+  width: 140px;
   text-decoration: none;
-  color: red;
+  font-family: "Aref Ruqaa Ink", serif;
   margin-left: 10px;
 }
 .titles:hover {
-  color: rgb(136, 136, 216);
+  color: rgb(230, 130, 48);
   transition: 0.9s;
 }
 .profile-title {
+  text-align: center;
   display: flex;
   justify-content: space-between;
   font-size: large;
   width: 70px;
+  font-family: "Aref Ruqaa Ink", serif;
   margin-right: 50px;
+  font-size: large;
 }
 .profile-title:hover {
   color: rgb(136, 136, 216);
@@ -45,6 +48,9 @@
 }
 .logout {
   font-size: large;
+  display: flex;
+  text-align: center;
+  font-family: "Aref Ruqaa Ink", serif;
   text-decoration: none;
   margin-left: 10px;
 }
@@ -65,5 +71,8 @@
   width: 80px;
 }
 .Logo {
-  color: red;
+  font-family: "Bungee Spice";
+}
+.User-Icon {
+  padding-top: 10%;
 }
