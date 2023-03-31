@@ -12,7 +12,7 @@ const Series = () => {
   const fetchSeries = async () => {
     await apiService
       .get(
-        `TVSeries/${query.get("GenreIds") ?? "16"}/${
+        `TVSeries/${query.get("GenreIds") ?? "10759"}/${
           query.get("pageNumber") ?? "1"
         }  `
       )
@@ -22,7 +22,7 @@ const Series = () => {
   };
   React.useEffect(() => {
     fetchSeries();
-  });
+  }, [query]);
 
   React.useEffect(() => {
     apiService.get("TVSeries/genre").then((respon) => {
@@ -32,7 +32,7 @@ const Series = () => {
   return (
     <div>
       <Topbar />
-      <div className="Name">Popüler Diziler</div>
+      <div className="Name">Categories</div>
       <div className="movie-categories">
         <div className="categories">
           <select
@@ -65,6 +65,30 @@ const Series = () => {
                 ))}
             </div>
           </div>
+        </div>
+        <div className="page-numbers">
+          <button
+            className="Pagination"
+            onClick={() => {
+              setQuery({
+                genreId: query.get("genreIds") ?? "10759",
+                pageNumber: series.pageNumber - 1,
+              });
+            }}
+          >
+            Page : {series.pageNumber - 1}
+          </button>{" "}
+          <button
+            className="Pagination"
+            onClick={() => {
+              setQuery({
+                genreId: query.get("genreIds") ?? "10759",
+                pageNumber: series.pageNumber + 1,
+              });
+            }}
+          >
+            Page: {series.pageNumber + 1}
+          </button>{" "}
         </div>
       </div>
     </div>

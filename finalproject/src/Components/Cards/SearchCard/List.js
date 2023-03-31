@@ -14,7 +14,6 @@ const List = ({ movie }) => {
   const jsonData = localStorage.getItem("user");
   useEffect(() => {
     setUser(JSON.parse(jsonData));
-    console.log(jsonData);
   }, [jsonData]);
   return (
     <>

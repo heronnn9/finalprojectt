@@ -16,11 +16,9 @@ const Login = () => {
     e.preventDefault();
     const user = { email, password };
     const response = await apiServices.post(LOGIN_URL, user);
-    console.log(response);
     setUser(response.data);
     setSuccess(true);
     localStorage.setItem("user", JSON.stringify(response.data));
-    console.log(response.data);
   };
   const handleLogin = () => {
     if (success == true) {

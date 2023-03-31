@@ -1,15 +1,14 @@
 .top-bar {
   display: flex;
-  align-items: center;
   position: fixed;
+  align-items: center;
   top: 0;
   left: 0;
   height: 64px;
   width: 100%;
+  background-color: #000814;
   z-index: 9999999;
   transition: top 0.2s linear;
-  /* background-color: rgb(3, 37, 65); */
-  background-color: #000000;
   color: white;
 }
 .selam {
@@ -30,7 +29,6 @@
   text-align: center;
   display: flex;
   justify-content: space-between;
-  font-size: large;
   width: 70px;
   font-family: "Aref Ruqaa Ink", serif;
   margin-right: 50px;

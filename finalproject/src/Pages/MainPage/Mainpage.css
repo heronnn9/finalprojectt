@@ -1,3 +1,9 @@
 body {
-  background-color: #151414;
+  background-color: #011128;
+  margin: 0;
+  padding: 0;
+}
+.Filmler {
+  display: flex;
+  justify-content: center;
 }

@@ -1,5 +1,5 @@
 .Series-Introduction {
-  background-color: rgb(207, 149, 40);
+  background-color: #000814;
   width: 180px;
   padding-left: 10px;
   padding-top: 10px;
@@ -16,15 +16,12 @@
   width: 30px;
   padding-left: 6px;
   align-items: center;
-  border-radius: 50%;
-  background-color: rgb(169, 122, 34);
 }
 .Series-Name {
   display: flex;
   margin-bottom: 5px;
   justify-content: center;
   border-radius: 8px;
-  background-color: rgb(169, 122, 34);
 }
 .Series-Container {
   transition: 0.5s all;

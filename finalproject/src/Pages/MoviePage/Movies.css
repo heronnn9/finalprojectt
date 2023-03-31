@@ -30,7 +30,7 @@
   width: 100%;
   height: auto;
   font-size: xx-large;
-  color: rgb(207, 149, 40);
+  color: white;
 }
 .page-numbers {
   display: flex;
@@ -43,10 +43,11 @@
   border-radius: 8px;
   width: 14vw;
   height: 2.5vw;
+  color: white;
   text-align: center;
   display: flex;
   font-size: large;
-  background-color: rgb(207, 149, 40);
+  background-color: #000814;
 }
 .options {
   background-color: rgb(48, 30, 103);
@@ -55,7 +56,8 @@
 .Pagination {
   border-radius: 6px;
   margin-top: 20px;
+  color: white;
   width: 10vw;
   height: 4vw;
-  background-color: rgb(207, 149, 40);
+  background-color: #000814;
 }

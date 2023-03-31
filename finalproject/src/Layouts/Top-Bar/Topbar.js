@@ -9,12 +9,10 @@ const Topbar = () => {
   const jsonData = localStorage.getItem("user");
   useEffect(() => {
     setUser(JSON.parse(jsonData));
-    console.log(jsonData);
   }, [jsonData]);
 
   return (
     <div className="top-bar">
-      <div></div>
       <div className="logo2" />
       <Link to="/mainpage">
         <h2 className="Logo">Moviestagram</h2>

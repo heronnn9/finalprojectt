@@ -6,7 +6,7 @@ import {
   faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../Login/Login.css";
+import "./Login.css";
 import apiService from "../../Services/API/Api";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{2,23}$/;
@@ -121,7 +121,7 @@ const Register = () => {
             >
               {errMsg}
             </p>
-            <h2>Moviestagram Register Form</h2>
+            <h2>Moviestagram Register</h2>
             <form onSubmit={handleSubmit} className="Reg-Form">
               <label htmlFor="name">
                 Name :
@@ -278,7 +278,7 @@ const Register = () => {
                 <span aria-label="dollar sign">$</span>{" "}
                 <span aria-label="percent">%</span>
               </p>
-              <button className="Sign-In">Sign Up</button>
+              <button className="Log-In">Sign Up</button>
             </form>
             <p>
               Already registered?

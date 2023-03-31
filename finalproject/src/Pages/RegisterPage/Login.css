@@ -11,15 +11,6 @@
   color: #fff;
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 1rem 0.5rem;
-}
-
 section {
   width: 100%;
   max-width: 420px;
@@ -105,4 +96,12 @@ label {
   filter: brightness(80%);
   width: 100vw;
   height: 100vh;
+}
+.Reg-Form {
+  width: 20vw;
+}
+.Reg-Input {
+  width: 50vh;
+  background: gray;
+  color: aliceblue;
 }

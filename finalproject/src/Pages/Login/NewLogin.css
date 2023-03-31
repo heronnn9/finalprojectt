@@ -2,7 +2,7 @@
   background-image: url("../../Layouts/Images/1512217.jpg");
   background-size: cover;
   position: fixed;
-  filter: brightness(50%);
+  filter: brightness(80%);
   width: 100vw;
   height: 100vh;
 }
@@ -36,7 +36,9 @@
   font-size: x-large;
 }
 .Login-Input {
-  width: 40vh;
+  width: 50vh;
+  background: gray;
+  color: aliceblue;
 }
 .Forms {
   display: flex;
@@ -44,7 +46,7 @@
 }
 .Log-In {
   margin-top: 24px;
-  height: 2vw;
+  height: 3vw;
   background-color: rgb(241, 164, 31);
   text-decoration: none;
   border-radius: 8px;
