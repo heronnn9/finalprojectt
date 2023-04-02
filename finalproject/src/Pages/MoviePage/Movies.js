@@ -26,7 +26,7 @@ const Movies = () => {
     console.log(testData);
     setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 600);
   };
   const fetchCategory = async () => {
     const testCategory = await apiService.get("Movie/genre");
@@ -38,7 +38,7 @@ const Movies = () => {
   }, [query]);
 
   return (
-    <div>
+    <div className="background-site">
       <Topbar />
       <div className="Name">Categories</div>
       <div className="categories">

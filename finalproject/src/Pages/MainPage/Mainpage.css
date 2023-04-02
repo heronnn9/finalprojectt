@@ -1,5 +1,7 @@
 body {
-  background-color: #011128;
+  background-color: #020c19;
+  background-size: contain;
+  background-position: bottom;
   margin: 0;
   padding: 0;
 }

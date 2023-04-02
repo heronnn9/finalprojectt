@@ -13,7 +13,6 @@ const MovieContainer = ({ movie }) => {
         <div className="Movie-Introduction">
           <div className="Name-Relase">
             <div className="Movie-Adı">{movie.Title}</div>
-            <div className="Vote-Average">IMDB {movie.VoteAverage}</div>
           </div>
         </div>
       </div>

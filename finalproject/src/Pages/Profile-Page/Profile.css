@@ -1,56 +1,22 @@
-.profile {
-  display: flex;
-}
-.Profil {
-  color: aliceblue;
-}
-.user-info {
+.background-profil {
+  background-image: url("https://c1.wallpaperflare.com/preview/879/785/83/auditorium-stadium-bench-chairs.jpg");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
   width: 100vw;
-  height: 10vw;
-  margin-top: 56px;
-  display: flex;
-  background-image: url(./Profile-Page-Image/istockphoto-1339787499-170667a.jpg);
+  height: 100vh;
 }
-
-.user-icon {
+.Profile-Info {
+  width: 20vw;
+  height: 80vh;
+  background-color: #2e3d54;
+  box-shadow: 5px 10px 5px 5px;
+  border-top: 1px solid black;
+  margin-top: 2px;
   display: flex;
-  border: 4px solid black;
-  border-radius: 50%;
-  background-color: rgb(255, 193, 77);
-  width: 100px;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  margin-left: 1em;
-  margin-top: 0.35em;
+  flex-direction: column;
 }
-.personal-info {
-  display: flex;
-  margin-top: 2em;
-  margin-left: 40px;
-  color: rgb(194, 194, 194);
-}
-.Under-Info {
-  display: flex;
-  justify-content: space-between;
-}
-.Surname {
-  margin-left: 8px;
-}
-.Favorites {
-  width: 50vw;
-  display: flex;
-  height: auto;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-.Favori-Text {
-  display: flex;
-  align-items: center;
-  padding-left: 20vw;
-}
-.CrtFvrt-txt {
-  display: flex;
-  padding-right: 20vw;
+.Profile-Icon {
+  margin-top: 50px;
+  font-size: xxx-large;
 }

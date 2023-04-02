@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import {
+  faUser,
+  faArrowAltCircleRight,
+} from "@fortawesome/free-regular-svg-icons";
 import apiServices from "../../Services/API/Api";
 import "./NewLogin.css";
 const LOGIN_URL = "/User/Login";
@@ -58,12 +61,12 @@ const Login = () => {
                 required
               />
               <button onClick={handleLogin} type="submit" className="Log-In">
-                Sign In
+                Login <FontAwesomeIcon icon={faArrowAltCircleRight} beat />
               </button>
             </form>
             <Link to="/register" className="Register">
               {" "}
-              Need an Account?
+              Create an Account?
             </Link>
           </div>
         </div>

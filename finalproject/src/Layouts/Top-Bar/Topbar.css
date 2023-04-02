@@ -1,12 +1,12 @@
 .top-bar {
   display: flex;
-  position: fixed;
+  position: relative;
   align-items: center;
   top: 0;
   left: 0;
   height: 64px;
   width: 100%;
-  background-color: #000814;
+  background-color: #2e3d54;
   z-index: 9999999;
   transition: top 0.2s linear;
   color: white;

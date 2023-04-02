@@ -1,3 +1,11 @@
+.background-site {
+  background-image: url("https://c1.wallpaperflare.com/preview/879/785/83/auditorium-stadium-bench-chairs.jpg");
+
+  background-size: contain;
+  background-position: bottom;
+  margin: 0;
+  padding: 0;
+}
 .categories {
   display: flex;
   align-items: center;

@@ -1,5 +1,6 @@
 .Login-Background {
-  background-image: url("../../Layouts/Images/1512217.jpg");
+  /* background-image: url("../../Layouts/Images/1512217.jpg"); */
+  background-image: url("https://cdn.wallpapersafari.com/51/11/pAFte5.jpg");
   background-size: cover;
   position: fixed;
   filter: brightness(80%);
@@ -20,7 +21,7 @@
   align-items: center;
   position: fixed;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   color: aliceblue;
   width: 40vw;
   height: 70vh;
@@ -46,12 +47,14 @@
 }
 .Log-In {
   margin-top: 24px;
+  padding-bottom: 15px;
   height: 3vw;
-  background-color: rgb(241, 164, 31);
-  text-decoration: none;
+  font-size: large;
+  color: white;
+  background-color: #c20505;
   border-radius: 8px;
-  margin-left: 40%;
-  width: 100px;
+  margin-left: 30%;
+  width: 10vw;
 }
 .Register {
   font-family: "Aref Ruqaa Ink", serif;

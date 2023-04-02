@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Fragment } from "react";
 import SeriesContainer from "./SeriesContainer";
+import Loading from "../../Layouts/Loading/Loading";
 import { useSearchParams } from "react-router-dom";
 import Categories from "../../Components/Categories/Categories";
 import Topbar from "../../Layouts/Top-Bar/Topbar";
@@ -8,29 +9,43 @@ import apiService from "../../Services/API/Api";
 const Series = () => {
   const [category, setCategory] = useState([]);
   const [query, setQuery] = useSearchParams();
+  const [loading, setLoading] = useState(false);
   const [series, setSeries] = useState([]);
+  // const fetchSeries = async () => {
+  //   await apiService
+  //     .get(
+  //       `TVSeries/${query.get("GenreIds") ?? "10759"}/${
+  //         query.get("pageNumber") ?? "1"
+  //       }  `
+  //     )
+  //     .then((respo) => {
+  //       setSeries(respo.data);
+  //     });
+  // };
   const fetchSeries = async () => {
-    await apiService
-      .get(
-        `TVSeries/${query.get("GenreIds") ?? "10759"}/${
-          query.get("pageNumber") ?? "1"
-        }  `
-      )
-      .then((respo) => {
-        setSeries(respo.data);
-      });
+    setLoading(true);
+    const respo = await apiService.get(
+      `TVSeries/${query.get("GenreIds") ?? "10759"}/${
+        query.get("pageNumber") ?? "1"
+      }`
+    );
+    setSeries(respo.data);
+    console.log(respo);
+    setTimeout(() => {
+      setLoading(false);
+    }, 600);
   };
-  React.useEffect(() => {
+  useEffect(() => {
     fetchSeries();
   }, [query]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     apiService.get("TVSeries/genre").then((respon) => {
       setCategory(respon.data);
     });
   }, []);
   return (
-    <div>
+    <div className="background-site">
       <Topbar />
       <div className="Name">Categories</div>
       <div className="movie-categories">
@@ -46,9 +61,6 @@ const Series = () => {
             {category.length > 0 &&
               category.map((categoryData) => {
                 return (
-                  // <option key={categoryData.Id} value={categoryData.Id}>
-                  //   {categoryData.Name}
-                  // </option>
                   <Fragment key={categoryData.id}>
                     <Categories category={categoryData} key={categoryData.id} />
                   </Fragment>
@@ -59,10 +71,17 @@ const Series = () => {
         <div className="movies">
           <div className="movie-banner">
             <div className="MovieContainer">
-              {series &&
+              {/* {series &&
                 series.map((serie) => (
                   <SeriesContainer serie={serie} key={serie.Id} />
-                ))}
+                ))} */}
+              {loading ? (
+                <Loading />
+              ) : (
+                series.map((serie) => (
+                  <SeriesContainer serie={serie} key={serie.Id} />
+                ))
+              )}
             </div>
           </div>
         </div>
@@ -72,22 +91,22 @@ const Series = () => {
             onClick={() => {
               setQuery({
                 genreId: query.get("genreIds") ?? "10759",
-                pageNumber: series.pageNumber - 1,
+                pageNumber: series.Page - 1,
               });
             }}
           >
-            Page : {series.pageNumber - 1}
+            Page : {series.Page - 1}
           </button>{" "}
           <button
             className="Pagination"
             onClick={() => {
               setQuery({
                 genreId: query.get("genreIds") ?? "10759",
-                pageNumber: series.pageNumber + 1,
+                pageNumber: series.Page + 1,
               });
             }}
           >
-            Page: {series.pageNumber + 1}
+            Page: {series.Page + 1}
           </button>{" "}
         </div>
       </div>
