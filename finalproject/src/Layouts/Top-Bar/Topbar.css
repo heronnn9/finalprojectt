@@ -6,7 +6,7 @@
   left: 0;
   height: 64px;
   width: 100%;
-  background-color: #2e3d54;
+  background-color: rgb(3, 37, 65);
   z-index: 9999999;
   transition: top 0.2s linear;
   color: white;

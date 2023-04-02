@@ -14,7 +14,6 @@ const Movies = () => {
   const [loading, setLoading] = useState(false);
   const [testResult, setTestResult] = useState({
     Results: [],
-    title: "Avengers",
   });
 
   const fetchMovies = async () => {

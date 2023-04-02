@@ -11,17 +11,7 @@ const Series = () => {
   const [query, setQuery] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [series, setSeries] = useState([]);
-  // const fetchSeries = async () => {
-  //   await apiService
-  //     .get(
-  //       `TVSeries/${query.get("GenreIds") ?? "10759"}/${
-  //         query.get("pageNumber") ?? "1"
-  //       }  `
-  //     )
-  //     .then((respo) => {
-  //       setSeries(respo.data);
-  //     });
-  // };
+
   const fetchSeries = async () => {
     setLoading(true);
     const respo = await apiService.get(
@@ -35,15 +25,15 @@ const Series = () => {
       setLoading(false);
     }, 600);
   };
+  const fetchCategory = async () => {
+    const testCategory = await apiService.get("TVSeries/genre");
+    setCategory(testCategory.data);
+  };
   useEffect(() => {
     fetchSeries();
+    fetchCategory();
   }, [query]);
 
-  useEffect(() => {
-    apiService.get("TVSeries/genre").then((respon) => {
-      setCategory(respon.data);
-    });
-  }, []);
   return (
     <div className="background-site">
       <Topbar />

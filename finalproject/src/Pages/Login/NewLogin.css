@@ -53,10 +53,13 @@
   color: white;
   background-color: #c20505;
   border-radius: 8px;
-  margin-left: 30%;
   width: 10vw;
 }
 .Register {
   font-family: "Aref Ruqaa Ink", serif;
   font-size: x-large;
+}
+.Login-Loading {
+  display: flex;
+  justify-content: center;
 }

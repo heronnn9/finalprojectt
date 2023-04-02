@@ -7,16 +7,29 @@
   height: 100vh;
 }
 .Profile-Info {
-  width: 20vw;
-  height: 80vh;
-  background-color: #2e3d54;
+  width: 100vw;
+  height: 35vh;
+  background-image: url("../../Layouts/Images/profil.jpg");
+  background-color: rgb(3, 37, 65);
   box-shadow: 5px 10px 5px 5px;
   border-top: 1px solid black;
-  margin-top: 2px;
+  justify-content: space-around;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+}
+.User {
+  display: flex;
+  align-items: center;
 }
 .Profile-Icon {
-  margin-top: 50px;
   font-size: xxx-large;
+}
+.User-Name {
+  width: 10.5vw;
+  justify-content: space-around;
+  margin-left: 1vw;
+  display: flex;
+}
+.Favorite-List {
+  margin-left: 35vw;
 }

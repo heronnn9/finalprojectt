@@ -3,7 +3,7 @@ import { GlobalContext } from "../../Context/GlobalState";
 import Topbar from "../../Layouts/Top-Bar/Topbar";
 import "./Profile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { faUser, faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 import FavoriteCard from "../../Components/Cards/FavoriteCards/FavoriteCard";
 const Profile = () => {
   const [user, setUser] = useState("");
@@ -14,14 +14,22 @@ const Profile = () => {
   }, [jsonData]);
   const { favoritelist } = useContext(GlobalContext);
   return (
-    <div className="background-profil">
+    <div className="background-profile">
       <Topbar />
       <div className="Profile-Info">
-        <div>
-          <FontAwesomeIcon className="Profile-Icon" icon={faUser} />
+        <div className="User">
+          <div>
+            <FontAwesomeIcon className="Profile-Icon" icon={faUser} />
+          </div>
+          <div className="User-Name">
+            <h2> {user.Name} </h2>
+            <h2>{user.Surname}</h2>
+          </div>
         </div>
-        <div>
-          <h1>Hello {user.Name} !!! </h1>
+        <div className="Favorite-List">
+          <h1>
+            Favori Listesi Oluştur <FontAwesomeIcon icon={faPlusSquare} beat />
+          </h1>
         </div>
       </div>
     </div>

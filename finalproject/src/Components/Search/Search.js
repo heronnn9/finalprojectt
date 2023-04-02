@@ -1,6 +1,4 @@
 import "./Search.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {} from "@fortawesome/free-regular-svg-icons";
 
 const Search = (props) => {
   return (

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Loading from "../../Layouts/Loading/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -10,23 +11,27 @@ import "./NewLogin.css";
 const LOGIN_URL = "/User/Login";
 const Login = () => {
   const [email, setEMail] = useState("");
-  const [user, setUser] = useState();
+  const [loading, setLoading] = useState(false);
+  const [, setUser] = useState();
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const user = { email, password };
     const response = await apiServices.post(LOGIN_URL, user);
     setUser(response.data);
     setSuccess(true);
-    localStorage.setItem("user", JSON.stringify(response.data));
-  };
-  const handleLogin = () => {
-    if (success == true) {
-      navigate("/movies");
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    if (success === true) {
+      navigate("/mainpage");
+      setLoading(false);
     }
+    localStorage.setItem("user", JSON.stringify(response.data));
   };
 
   return (
@@ -60,9 +65,15 @@ const Login = () => {
                 value={password}
                 required
               />
-              <button onClick={handleLogin} type="submit" className="Log-In">
-                Login <FontAwesomeIcon icon={faArrowAltCircleRight} beat />
-              </button>
+              <div className="Login-Loading">
+                {loading ? (
+                  <Loading className="Loading" />
+                ) : (
+                  <button type="submit" className="Log-In">
+                    Login <FontAwesomeIcon icon={faArrowAltCircleRight} beat />
+                  </button>
+                )}
+              </div>
             </form>
             <Link to="/register" className="Register">
               {" "}
@@ -76,50 +87,3 @@ const Login = () => {
 };
 
 export default Login;
-
-{
-  /* {success ? (
-  <section>
-    <h1>Welcome {user.Name} </h1>
-    <h1>You are logged in!</h1>
-    <br />
-    <p>
-      <Link to="/mainpage">Go to Home</Link>
-    </p>
-  </section>
-) : (
-  <section className="Login-Form">
-    <p aria-live="assertive"></p>
-    <h1>Welcome to the Moviestagram</h1>
-    <form className="form" onSubmit={handleSubmit}>
-      <label htmlFor="email">Email:</label>
-      <input
-        className="Login-Input"
-        type="text"
-        id="user"
-        autoComplete="off"
-        onChange={(e) => setEMail(e.target.value)}
-        value={email}
-        required
-      />
-
-      <label htmlFor="password">Password:</label>
-      <input
-        type="password"
-        id="password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-        required
-      />
-      <button className="Sign-In">Sign In</button>
-    </form>
-    <p>
-      Need an Account?
-      <br />
-      <span className="line">
-        <Link to="/register">Sign Up</Link>
-      </span>
-    </p>
-  </section>
-)} */
-}
