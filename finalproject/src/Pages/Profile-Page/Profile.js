@@ -23,7 +23,7 @@ const Profile = () => {
           </div>
           <div className="User-Name">
             <h2> {user.Name} </h2>
-            <h2>{user.Surname}</h2>
+            <h2 className="Surname">{user.Surname}</h2>
           </div>
         </div>
         <div className="Favorite-List">

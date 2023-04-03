@@ -20,16 +20,20 @@
 .User {
   display: flex;
   align-items: center;
+  width: 20vw;
+  justify-content: center;
 }
 .Profile-Icon {
   font-size: xxx-large;
 }
 .User-Name {
+  margin-left: 10px;
   width: 10.5vw;
-  justify-content: space-around;
-  margin-left: 1vw;
   display: flex;
 }
 .Favorite-List {
   margin-left: 35vw;
+}
+.Surname {
+  margin-left: 10px;
 }
