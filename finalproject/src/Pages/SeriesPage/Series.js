@@ -11,6 +11,7 @@ const Series = () => {
   const [query, setQuery] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [series, setSeries] = useState([]);
+  const [pageNumber, setPageNumber] = useState(1);
 
   const fetchSeries = async () => {
     setLoading(true);
@@ -19,11 +20,9 @@ const Series = () => {
         query.get("pageNumber") ?? "1"
       }`
     );
+    setPageNumber(parseInt(query.get("pageNumber") ?? "1"));
     setSeries(respo.data);
-    console.log(respo);
-    setTimeout(() => {
-      setLoading(false);
-    }, 600);
+    setLoading(false);
   };
   const fetchCategory = async () => {
     const testCategory = await apiService.get("TVSeries/genre");
@@ -77,26 +76,27 @@ const Series = () => {
         </div>
         <div className="page-numbers">
           <button
+            disabled={pageNumber === 1}
             className="Pagination"
             onClick={() => {
               setQuery({
                 genreId: query.get("genreIds") ?? "10759",
-                pageNumber: series.Page - 1,
+                pageNumber: pageNumber - 1,
               });
             }}
           >
-            Page : {series.Page - 1}
+            Page : {pageNumber - 1}
           </button>{" "}
           <button
             className="Pagination"
             onClick={() => {
               setQuery({
                 genreId: query.get("genreIds") ?? "10759",
-                pageNumber: series.Page + 1,
+                pageNumber: pageNumber + 1,
               });
             }}
           >
-            Page: {series.Page + 1}
+            Page: {pageNumber + 1}
           </button>{" "}
         </div>
       </div>

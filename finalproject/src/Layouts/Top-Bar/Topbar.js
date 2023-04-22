@@ -1,6 +1,6 @@
 import "./Topbar.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 const Topbar = () => {
@@ -10,7 +10,7 @@ const Topbar = () => {
   useEffect(() => {
     setUser(JSON.parse(jsonData));
   }, [jsonData]);
-
+  const navigate = useNavigate();
   return (
     <div className="top-bar">
       <div className="logo2" />
@@ -34,9 +34,15 @@ const Topbar = () => {
               <FontAwesomeIcon className="User-Icon" icon={faUser} />
             </div>
           </Link>
-          <Link className="logout" to="/">
+          <button
+            className="logout"
+            onClick={() => {
+              localStorage.removeItem(user);
+              navigate("/");
+            }}
+          >
             Logout
-          </Link>
+          </button>
         </div>
       </div>
     </div>

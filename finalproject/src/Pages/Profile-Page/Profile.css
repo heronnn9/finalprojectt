@@ -33,7 +33,25 @@
 }
 .Favorite-List {
   margin-left: 35vw;
+  display: flex;
 }
 .Surname {
   margin-left: 10px;
+}
+.Add-Favorite {
+  background: none;
+  font-size: x-large;
+  margin-left: 1em;
+}
+.List-Input {
+  display: flex;
+  margin-top: 1em;
+  flex-direction: column;
+  width: 20vw;
+}
+.Name-Input {
+  margin-top: 4px;
+}
+.Font {
+  color: #fff;
 }

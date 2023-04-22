@@ -2,10 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../Layouts/Loading/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faArrowAltCircleRight,
-} from "@fortawesome/free-regular-svg-icons";
+import { faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons";
 import apiServices from "../../Services/API/Api";
 import "./NewLogin.css";
 const LOGIN_URL = "/User/Login";
@@ -14,24 +11,21 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const [, setUser] = useState();
   const [password, setPassword] = useState("");
-  const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     const user = { email, password };
-    const response = await apiServices.post(LOGIN_URL, user);
-    setUser(response.data);
-    setSuccess(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-    if (success === true) {
+    const response = await apiServices
+      .post(LOGIN_URL, user)
+      .finally((e) => setLoading(false));
+
+    if (response !== undefined) {
+      setUser(response.data);
       navigate("/mainpage");
-      setLoading(false);
+      localStorage.setItem("user", JSON.stringify(response.data));
     }
-    localStorage.setItem("user", JSON.stringify(response.data));
   };
 
   return (
@@ -40,7 +34,6 @@ const Login = () => {
       <div className="Login-Form">
         <div className="Form">
           <h1>Welcome To Moviestagram</h1>
-          <FontAwesomeIcon className="Login-Icon" icon={faUser} />
           <div className="Login-Inputs">
             <form className="Forms" onSubmit={handleSubmit}>
               <label className="labels" htmlFor="email">
