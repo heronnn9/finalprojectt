@@ -1,0 +1,10 @@
+.bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.soon {
+  color: white;
+  font-size: 200px;
+}

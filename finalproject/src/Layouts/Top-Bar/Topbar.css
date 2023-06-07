@@ -1,6 +1,6 @@
 .top-bar {
   display: flex;
-  position: relative;
+  position: fixed;
   align-items: center;
   top: 0;
   left: 0;
@@ -45,8 +45,11 @@
   margin-right: 3em;
 }
 .logout {
+  color: white;
   font-size: large;
   display: flex;
+  background-color: transparent;
+  border: none;
   text-align: center;
   font-family: "Aref Ruqaa Ink", serif;
   text-decoration: none;
@@ -69,7 +72,7 @@
   width: 80px;
 }
 .Logo {
-  font-family: "Bungee Spice";
+  margin-left: 3vh;
 }
 .User-Icon {
   padding-top: 10%;

@@ -8,6 +8,7 @@ import SeriesInfo from "../Components/WatchInformation/Series/SeriesInfo";
 import MovieInfo from "../Components/WatchInformation/Movies/MovieInfo";
 import Register from "../Pages/RegisterPage/Register";
 import { GlobalProvider } from "../Context/GlobalState";
+import Explore from "../Pages/Explore/Explore";
 function Routers() {
   return (
     <GlobalProvider>
@@ -21,6 +22,7 @@ function Routers() {
           <Route path="/series" element={<Series />} />
           <Route path="/series/SeriesInfo/:Id" element={<SeriesInfo />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/Explore" element={<Explore />} />
         </Routes>
       </BrowserRouter>
     </GlobalProvider>

@@ -13,7 +13,6 @@ const Topbar = () => {
   const navigate = useNavigate();
   return (
     <div className="top-bar">
-      <div className="logo2" />
       <Link to="/mainpage">
         <h2 className="Logo">Moviestagram</h2>
       </Link>
@@ -25,7 +24,9 @@ const Topbar = () => {
           <Link to="/series" className="titles">
             Popular Series
           </Link>
-          <div className="titles">Explore</div>
+          <Link to="/Explore" className="titles">
+            Explore
+          </Link>
         </div>
         <div className="selam">
           <Link to="/Profile">
