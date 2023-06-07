@@ -54,10 +54,6 @@ const MovieInfo = () => {
                 <h1> IMDB : {movieId.VoteAverage}</h1>
               </div>
             </div>
-            {/* <div className="Overvieww">
-              <h1>Overview IMDB : {movieId.VoteAverage}</h1>
-              {movieId.Overview}
-            </div> */}
           </div>
         </div>
       </div>
